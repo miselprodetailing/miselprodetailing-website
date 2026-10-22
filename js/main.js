@@ -239,9 +239,9 @@
     }),
     /* phone: each section slides up over the previous one like a card, from a smaller rounded panel */
     "(max-width: 999px)": () => $$(".card-in").forEach((s) => {
-      gsap.fromTo(s, { clipPath: "inset(0% 7% 0% 7% round 36px)", y: 90, scale: 0.94 },
-        { clipPath: "inset(0% 0% 0% 0% round 0px)", y: 0, scale: 1, ease: "power1.out",
-          scrollTrigger: { trigger: s, start: "top bottom", end: "top 30%", scrub: 0.4 } });
+      gsap.fromTo(s, { y: 80, scale: 0.94, opacity: 0.4, force3D: true },
+        { y: 0, scale: 1, opacity: 1, ease: "power1.out", force3D: true,
+          scrollTrigger: { trigger: s, start: "top bottom", end: "top 40%", scrub: true } });
     }),
   });
 
