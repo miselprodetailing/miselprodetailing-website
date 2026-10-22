@@ -354,7 +354,6 @@ html.no-pre #pre { display: none; }
 .revs { display: grid; gap: 16px; margin-top: 50px; }
 @media (min-width: 900px) { .revs { grid-template-columns: 1fr 1fr; gap: 22px; } }
 .rev { position: relative; padding: 34px 30px 28px; border-radius: 26px; background: linear-gradient(160deg, #18181c, #0d0d0f); border: 1px solid var(--line); overflow: hidden; }
-.rev::before { content: "C"; position: absolute; right: 20px; top: -30px; font-family: Georgia, serif; font-size: 200px; color: rgba(225,6,0,0.14); line-height: 1; }
 .rev .st { color: #ffc93c; letter-spacing: 3px; font-size: 18px; }
 .rev p { font-size: clamp(17px, 1.6vw, 19px); margin-top: 14px; color: #e8e8ec; }
 .rev .who { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
