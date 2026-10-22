@@ -61,19 +61,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- preloader */
 #pre { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 28px; }
-#pre .pl { position: relative; width: 300px; height: 300px; flex: none; }
-#pre .pl-glow { position: absolute; inset: -60px; border-radius: 50%; background: radial-gradient(circle, rgba(225,6,0,0.28) 0%, rgba(225,6,0,0) 65%); }
-#pre .pl-core { position: absolute; inset: 10px; border-radius: 50%; background: radial-gradient(circle at 50% 30%, #26262a 0%, #111113 55%, #050505 100%);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.08), inset 0 0 40px rgba(0,0,0,0.9); }
-#pre .pl-ring { position: absolute; inset: 0; width: 300px; height: 300px; overflow: visible; filter: drop-shadow(0 0 6px rgba(255,255,255,0.35)); }
-#pre .pl-comet { position: absolute; inset: 0; border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(225,6,0,0) 0deg, rgba(225,6,0,0) 200deg, rgba(255,42,26,0.6) 320deg, #ff2a1a 356deg, #fff 359.5deg, rgba(225,6,0,0) 360deg);
-  -webkit-mask: radial-gradient(circle closest-side, transparent calc(100% - 9px), #000 calc(100% - 8px), #000 calc(100% - 3px), transparent calc(100% - 2px));
-          mask: radial-gradient(circle closest-side, transparent calc(100% - 9px), #000 calc(100% - 8px), #000 calc(100% - 3px), transparent calc(100% - 2px));
-  filter: drop-shadow(0 0 10px rgba(255,42,26,0.9)); }
-#pre .pl img { position: absolute; left: 50%; top: 50%; width: 250px; height: 250px; margin: -125px 0 0 -123px; object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7)); }
-#pre .pct { position: absolute; left: 0; right: 0; top: calc(50% + 180px); text-align: center; font-family: "Anton"; font-size: 18px; letter-spacing: 8px; color: var(--muted); }
+#pre .emb-wrap { position: relative; width: 470px; height: 470px; transform: scale(0.5); flex: none; }
+#pre .emb-wrap img { position: absolute; left: 2px; top: -16px; width: 510px; height: 510px; object-fit: contain; image-rendering: -webkit-optimize-contrast; }
+#pre .pct { position: absolute; left: 0; right: 0; top: calc(50% + 150px); text-align: center; font-family: "Anton"; font-size: 18px; letter-spacing: 8px; color: var(--muted); }
 html.no-pre #pre { display: none; }
 
       /* premium emblem (470px base): glossy core, chrome ring, orbiting red light trail, tick bezel */
