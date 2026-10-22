@@ -117,6 +117,8 @@
     if (!ok) { msg.className = "fmsg bad"; msg.textContent = "Popuni polja označena zvezdicom (*)."; }
     return ok;
   };
+  /* preselect service from /?usluga=... (links from service pages) */
+  try { const u = new URLSearchParams(location.search).get("usluga"); if (u) [...$("#f-usluga").options].forEach((o) => { if (o.text === u) $("#f-usluga").value = o.text; }); } catch (e) {}
   const dateTxt = () => { const d = val("#f-dan"); if (!d) return ""; const [y, m, dd] = d.split("-"); return `${dd}.${m}.${y}.`; };
   $("#sendWa").addEventListener("click", () => {
     if (!check()) return;
