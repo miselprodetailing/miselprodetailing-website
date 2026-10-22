@@ -197,7 +197,7 @@
   const heroIn = () => {
     const tl = gsap.timeline();
     tl.from(".hero .kicker", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" })
-      .from(".hero h1 .ln > span", { yPercent: 110, scale: 1.6, rotation: (i) => (i % 2 ? 4 : -4), duration: 0.7, ease: "power4.out", stagger: 0.12 }, 0.05)
+      .from(".hero h1 .ln > span", { scale: 1.35, rotation: (i) => (i % 2 ? 3 : -3), duration: 0.6, ease: "power4.out", stagger: 0.1 }, 0.05)
       .from(".hero .sub, .hero .ctas, .trust", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1 }, 0.45)
       .from("#reel", { y: 120, rotationY: -25, rotationX: 10, opacity: 0, duration: 1.1, ease: "expo.out" }, 0.3);
     return tl;
@@ -209,13 +209,13 @@
     const ring = pre.querySelector(".e-ring"), n = { v: 0 }, pn = $("#pctN");
     const tl = gsap.timeline({ onComplete: () => { pre.remove(); lenis && lenis.start(); finishIntro(); } });
     tl.fromTo(pre.querySelector(".e-core"), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "expo.out" }, 0)
-      .fromTo(ring, { strokeDasharray: 1420, strokeDashoffset: 1420 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, 0.05)
+      .fromTo(ring, { strokeDasharray: 1420, strokeDashoffset: 1420 }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.inOut" }, 0.05)
       .fromTo(pre.querySelector(".e-comet"), { opacity: 0, rotation: -60 }, { opacity: 1, rotation: 540, duration: 1.3, ease: "power2.out" }, 0.15)
       .fromTo(pre.querySelectorAll(".e-ticks, .e-major"), { opacity: 0, scale: 0.9, rotation: 40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "expo.out" }, 0.1)
       .fromTo(pre.querySelector(".emb-wrap > img"), { scale: 2.2, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.2)
-      .to(n, { v: 100, duration: 1.2, ease: "power2.inOut", onUpdate: () => (pn.textContent = Math.round(n.v)) }, 0.05)
-      .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 0.8, ease: "expo.inOut" }, 1.45)
-      .add(heroIn(), 1.75);
+      .to(n, { v: 100, duration: 0.9, ease: "power2.inOut", onUpdate: () => (pn.textContent = Math.round(n.v)) }, 0.05)
+      .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 0.6, ease: "expo.inOut" }, 1.0)
+      .add(heroIn(), 1.2);
   } else { pre && pre.remove(); heroIn(); }
 
   /* hero: video slowly pushes in and the whole hero sinks back as the next section rises */
