@@ -210,12 +210,12 @@ html.no-pre #pre { display: none; }
 .svc .pr a:hover { color: #fff; }
 
 /* ---------- packages */
-.pk-grid { display: grid; gap: 18px; margin-top: 50px; perspective: 1600px; }
+.pk-grid { display: grid; gap: 30px 18px; margin-top: 60px; perspective: 1600px; }
 @media (min-width: 980px) { .pk-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
-.pk { position: relative; border-radius: 28px; padding: 30px 28px 28px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line);
+.pk { position: relative; border-radius: 28px; padding: 30px 28px 28px; overflow: visible; display: flex; flex-direction: column; border: 1px solid var(--line);
   background: linear-gradient(170deg, #1a1a1e, #0b0b0d); }
 @media (min-width: 980px) { .pk { min-height: 540px; } }
-.pk .bgimg { position: absolute; inset: 0; z-index: 0; }
+.pk .bgimg { position: absolute; inset: 0; z-index: 0; border-radius: inherit; overflow: hidden; }
 .pk .bgimg img { width: 100%; height: 100%; object-fit: cover; opacity: .28; filter: grayscale(.35); transition: opacity .5s, transform 1s; }
 .pk:hover .bgimg img { opacity: .4; transform: scale(1.05); }
 .pk .bgimg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,12,0.55) 0%, rgba(10,10,12,0.92) 55%, #0b0b0d 100%); }
@@ -225,7 +225,7 @@ html.no-pre #pre { display: none; }
 .pk.black .nm { color: #fff; }
 .pk.plus { border-color: rgba(225,6,0,0.6); box-shadow: 0 0 60px rgba(225,6,0,0.18); }
 .pk.plus .nm span { color: var(--red); }
-.pk .badge { position: absolute; top: 22px; right: 22px; z-index: 2; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: var(--red);
+.pk .badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; z-index: 3; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: var(--red);
   padding: 7px 12px; border-radius: 999px; box-shadow: 0 0 24px rgba(225,6,0,0.6); }
 .pk .price { margin-top: 18px; font-family: "Anton"; font-size: clamp(38px, 4.4vw, 50px); line-height: 1; }
 .pk .price small { display: block; font-family: "Mont"; font-size: 13px; color: var(--muted); font-weight: 700; letter-spacing: 1.5px; margin-top: 8px; }
