@@ -15,7 +15,10 @@
     if (en.isIntersecting) { if (!v.src) { v.src = v.dataset.src; v.preload = "auto"; } const p = v.play(); if (p && p.catch) p.catch(() => {}); }
     else if (v.src) v.pause();
   }), { rootMargin: "200px 0px" }) : null;
-  vids.forEach((v) => { if (vio) vio.observe(v); else { v.src = v.dataset.src; v.play(); } });
+  /* start videos only after the page has loaded, so they don't slow the first paint */
+  const startVids = () => vids.forEach((v) => { if (vio) vio.observe(v); else { v.src = v.dataset.src; v.play(); } });
+  const later = () => ("requestIdleCallback" in window ? requestIdleCallback(startVids, { timeout: 2500 }) : setTimeout(startVids, 1200));
+  if (document.readyState === "complete") later(); else window.addEventListener("load", later, { once: true });
 
   /* ---------- gallery: built from the photo list */
   const PK = Array.from({ length: 19 }, (_, i) => ["pk", `poliranje-keramika-${String(i + 1).padStart(2, "0")}`, "Poliranje i keramika"]);
@@ -196,9 +199,9 @@
 
   const heroIn = () => {
     const tl = gsap.timeline();
-    tl.from(".hero .kicker", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" })
+    tl.from(".hero .kicker", { y: 20, duration: 0.6, ease: "power3.out" })
       .from(".hero h1 .ln > span", { scale: 1.35, rotation: (i) => (i % 2 ? 3 : -3), duration: 0.6, ease: "power4.out", stagger: 0.1 }, 0.05)
-      .from(".hero .sub, .hero .ctas, .trust", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1 }, 0.45)
+      .from(".hero .sub, .hero .ctas, .trust", { y: 24, duration: 0.7, ease: "power3.out", stagger: 0.1 }, 0.45)
       .from("#reel", { y: 120, rotationY: -25, rotationX: 10, opacity: 0, duration: 1.1, ease: "expo.out" }, 0.3);
     return tl;
   };
