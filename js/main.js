@@ -219,9 +219,17 @@
   }
 
   /* section → section: each section opens up like a card from rounded edges */
-  $$(".card-in").forEach((s) => {
-    gsap.fromTo(s, { clipPath: "inset(6% 5% 0% 5% round 48px)" }, { clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "none",
-      scrollTrigger: { trigger: s, start: "top bottom", end: "top 25%", scrub: 0.6 } });
+  ScrollTrigger.matchMedia({
+    "(min-width: 1000px)": () => $$(".card-in").forEach((s) => {
+      gsap.fromTo(s, { clipPath: "inset(6% 5% 0% 5% round 48px)" }, { clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "none",
+        scrollTrigger: { trigger: s, start: "top bottom", end: "top 25%", scrub: 0.6 } });
+    }),
+    /* phone: each section slides up over the previous one like a card, from a smaller rounded panel */
+    "(max-width: 999px)": () => $$(".card-in").forEach((s) => {
+      gsap.fromTo(s, { clipPath: "inset(0% 7% 0% 7% round 36px)", y: 90, scale: 0.94 },
+        { clipPath: "inset(0% 0% 0% 0% round 0px)", y: 0, scale: 1, ease: "power1.out",
+          scrollTrigger: { trigger: s, start: "top bottom", end: "top 30%", scrub: 0.4 } });
+    }),
   });
 
   /* headings: words slam in from below, like the reels */

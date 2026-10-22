@@ -62,8 +62,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- preloader */
 #pre { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 28px; }
 #pre .emb-wrap { position: relative; width: 470px; height: 470px; transform: scale(0.5); }
-#pre .emb-wrap img { position: absolute; left: -20px; top: -14px; width: 510px; height: 510px; object-fit: contain; }
-#pre .pct { font-family: "Anton"; font-size: 18px; letter-spacing: 8px; color: var(--muted); margin-top: -110px; }
+#pre .emb-wrap { flex: none; }
+#pre .emb-wrap img { position: absolute; left: -20px; top: -20px; width: 510px; height: 510px; object-fit: contain; }
+#pre .pct { position: absolute; left: 0; right: 0; top: calc(50% + 150px); text-align: center; font-family: "Anton"; font-size: 18px; letter-spacing: 8px; color: var(--muted); }
 html.no-pre #pre { display: none; }
 
       /* premium emblem (470px base): glossy core, chrome ring, orbiting red light trail, tick bezel */
@@ -427,4 +428,20 @@ footer .copy { grid-column: 1 / -1; font-size: 12px; border-top: 1px solid var(-
 @media (prefers-reduced-motion: reduce) {
   .js .rv { opacity: 1 !important; transform: none !important; }
   .marquee .track { animation: none; }
+}
+
+/* ---- izmene 22.10: telefon ---- */
+.course .buy { grid-column: 1; justify-self: start; margin-top: 8px; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: #fff; background: var(--red); padding: 7px 14px; border-radius: 999px; box-shadow: 0 0 18px rgba(225,6,0,0.4); }
+.course:hover .buy { background: var(--red2); }
+.yt .play { place-items: end start; padding: 12px; }
+.yt .play { display: flex; align-items: flex-end; justify-content: flex-start; gap: 10px; }
+.yt .play span { width: 48px; height: 48px; }
+.yt .play svg { width: 20px; height: 20px; }
+.yt .play b { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: rgba(0,0,0,0.65); padding: 6px 12px; border-radius: 999px; margin-bottom: 8px; }
+.hero h1, .hero .kicker, .hero p.sub, .trust { text-shadow: 0 2px 18px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9); }
+@media (max-width: 999px) {
+  .hero-media::after { background: linear-gradient(180deg, rgba(7,7,7,0.55) 0%, rgba(7,7,7,0.25) 22%, rgba(7,7,7,0.55) 42%, rgba(7,7,7,0.88) 62%, rgba(7,7,7,0.97) 100%); }
+  .map { aspect-ratio: auto; height: 240px; min-height: 0; }
+  .sec.card-in { transform-origin: 50% 0; }
 }
