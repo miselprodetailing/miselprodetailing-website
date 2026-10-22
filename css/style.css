@@ -437,9 +437,15 @@ footer .copy { grid-column: 1 / -1; font-size: 12px; border-top: 1px solid var(-
 .yt .play span { width: 48px; height: 48px; }
 .yt .play svg { width: 20px; height: 20px; }
 .yt .play b { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: rgba(0,0,0,0.65); padding: 6px 12px; border-radius: 999px; margin-bottom: 8px; }
-.hero h1, .hero .kicker, .hero p.sub, .trust { text-shadow: 0 2px 18px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9); }
+/* hero legibility: crisp layered shadow instead of a muddy blur */
+.hero h1 { text-shadow: 0 3px 0 rgba(0,0,0,0.55), 0 14px 34px rgba(0,0,0,0.55); }
+.hero h1 .red { text-shadow: 0 3px 0 rgba(0,0,0,0.55), 0 0 36px rgba(225,6,0,0.45); }
+.hero .kicker, .hero p.sub, .trust { text-shadow: 0 1px 2px rgba(0,0,0,0.9), 0 6px 18px rgba(0,0,0,0.6); }
 @media (max-width: 999px) {
-  .hero-media::after { background: linear-gradient(180deg, rgba(7,7,7,0.55) 0%, rgba(7,7,7,0.25) 22%, rgba(7,7,7,0.55) 42%, rgba(7,7,7,0.88) 62%, rgba(7,7,7,0.97) 100%); }
+  .hero-media video, .hero-media img { filter: brightness(0.78) saturate(0.85) contrast(1.05); }
+  .hero-media::after { background:
+      radial-gradient(120% 60% at 0% 55%, rgba(7,7,7,0.72) 0%, rgba(7,7,7,0.35) 55%, rgba(7,7,7,0) 80%),
+      linear-gradient(180deg, rgba(7,7,7,0.6) 0%, rgba(7,7,7,0.15) 18%, rgba(7,7,7,0.35) 38%, rgba(7,7,7,0.82) 62%, #070707 100%); }
   .map { aspect-ratio: auto; height: 240px; min-height: 0; }
   .sec.card-in { transform-origin: 50% 0; }
 }
