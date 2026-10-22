@@ -17,6 +17,7 @@
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
   <link rel="preload" href="assets/fonts/Anton.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/img/hero-poster.webp" as="image" />
   <link rel="stylesheet" href="css/style.css" />
   <script>
     document.documentElement.classList.add("js");
@@ -91,9 +92,8 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-media">
-        <video autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp" aria-hidden="true">
-          <source src="assets/video/hero.mp4" type="video/mp4" />
-        </video>
+        <img class="hero-blur" src="assets/img/hero-bg-blur.webp" alt="" aria-hidden="true" />
+        <video class="lazyv" data-only="mobile" data-src="assets/video/hero.mp4" muted loop playsinline preload="none" poster="assets/img/hero-poster.webp" aria-hidden="true"></video>
       </div>
       <div class="wrap">
         <div class="hero-txt">
@@ -116,9 +116,7 @@
           </div>
         </div>
         <div class="hero-reel" id="reel">
-          <video autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp" aria-label="Hyundai Kona N posle poliranja i keramike">
-            <source src="assets/video/hero.mp4" type="video/mp4" />
-          </video>
+          <video class="lazyv" data-only="desktop" data-src="assets/video/hero.mp4" muted loop playsinline preload="none" poster="assets/img/hero-poster.webp" aria-label="Hyundai Kona N posle poliranja i keramike"></video>
           <span class="tag"><b>●</b> Kona N · poliranje + keramika</span>
         </div>
       </div>
@@ -153,7 +151,7 @@
           <article class="svc rv"><div class="ph"><span class="no">02</span><img src="assets/img/dubinsko-pranje-21.webp" alt="Enterijer posle dubinskog pranja" loading="lazy" /></div>
             <div class="bd"><h3>Dubinsko pranje</h3><p>Enterijer i eksterijer. Sedišta, tepisi, plafon i svaki kutak.<br /><a class="more" href="/dubinsko-pranje-nis/">Detaljnije</a></p>
             <div class="pr"><b>10.000<small>RSD</small></b><a href="#zakazi" data-pick="Dubinsko pranje">Zakaži →</a></div></div></article>
-          <article class="svc rv"><div class="ph"><span class="no">03</span><video autoplay muted loop playsinline preload="none" poster="assets/img/poliranje-poster.webp" aria-label="Poliranje šoferke mašinom"><source src="assets/video/poliranje.mp4" type="video/mp4" /></video></div>
+          <article class="svc rv"><div class="ph"><span class="no">03</span><video class="lazyv" data-src="assets/video/poliranje.mp4" muted loop playsinline preload="none" poster="assets/img/poliranje-poster.webp" aria-label="Poliranje šoferke mašinom"></video></div>
             <div class="bd"><h3>Poliranje šoferke</h3><p>Skidamo ogrebotine od brisača i zamućenje. Bolja vidljivost, posebno noću.<br /><a class="more" href="/poliranje-soferke-nis/">Detaljnije</a></p>
             <div class="pr"><b>6.000<small>RSD</small></b><a href="#zakazi" data-pick="Poliranje šoferke">Zakaži →</a></div></div></article>
           <article class="svc rv"><div class="ph"><span class="no">04</span><img src="assets/img/poliranje-keramika-08.webp" alt="BMW serije 5 sa ispoliranim farovima" loading="lazy" /></div>

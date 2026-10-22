@@ -7,6 +7,16 @@
   const hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
   $("#yr").textContent = new Date().getFullYear();
 
+  /* videos: load only the one this screen shows, and play only while visible */
+  const isDesk = window.matchMedia("(min-width: 1000px)").matches;
+  const vids = $$("video.lazyv").filter((v) => !v.dataset.only || (v.dataset.only === "desktop") === isDesk);
+  const vio = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((en) => {
+    const v = en.target;
+    if (en.isIntersecting) { if (!v.src) { v.src = v.dataset.src; v.preload = "auto"; } const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    else if (v.src) v.pause();
+  }), { rootMargin: "200px 0px" }) : null;
+  vids.forEach((v) => { if (vio) vio.observe(v); else { v.src = v.dataset.src; v.play(); } });
+
   /* ---------- gallery: built from the photo list */
   const PK = Array.from({ length: 19 }, (_, i) => ["pk", `poliranje-keramika-${String(i + 1).padStart(2, "0")}`, "Poliranje i keramika"]);
   const DP = Array.from({ length: 27 }, (_, i) => ["dp", `dubinsko-pranje-${String(i + 1).padStart(2, "0")}`, "Dubinsko pranje"]);
