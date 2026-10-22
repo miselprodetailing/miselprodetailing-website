@@ -63,7 +63,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 #pre { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 28px; }
 #pre .emb-wrap { position: relative; width: 470px; height: 470px; transform: scale(0.5); }
 #pre .emb-wrap { flex: none; }
-#pre .emb-wrap img { position: absolute; left: -20px; top: -20px; width: 510px; height: 510px; object-fit: contain; }
+#pre .emb-wrap img { position: absolute; left: 2px; top: -16px; width: 510px; height: 510px; object-fit: contain; }
 #pre .pct { position: absolute; left: 0; right: 0; top: calc(50% + 150px); text-align: center; font-family: "Anton"; font-size: 18px; letter-spacing: 8px; color: var(--muted); }
 html.no-pre #pre { display: none; }
 
