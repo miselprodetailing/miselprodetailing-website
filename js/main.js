@@ -194,13 +194,13 @@
   const skipPre = document.documentElement.classList.contains("no-pre");
   if (pre && !skipPre) {
     lenis && lenis.stop();
-    const ring = pre.querySelector(".e-ring"), n = { v: 0 }, pn = $("#pctN");
+    const n = { v: 0 }, pn = $("#pctN");
     const tl = gsap.timeline({ onComplete: () => { pre.remove(); lenis && lenis.start(); finishIntro(); } });
-    tl.fromTo(pre.querySelector(".e-core"), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "expo.out" }, 0)
-      .fromTo(ring, { strokeDasharray: 1420, strokeDashoffset: 1420 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, 0.05)
-      .fromTo(pre.querySelector(".e-comet"), { opacity: 0, rotation: -60 }, { opacity: 1, rotation: 540, duration: 1.3, ease: "power2.out" }, 0.15)
-      .fromTo(pre.querySelectorAll(".e-ticks, .e-major"), { opacity: 0, scale: 0.9, rotation: 40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "expo.out" }, 0.1)
-      .fromTo(pre.querySelector(".emb-wrap > img"), { scale: 2.2, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.5, ease: "expo.out" }, 0.2)
+    tl.fromTo(pre.querySelector(".pl-core"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "expo.out" }, 0)
+      .fromTo(pre.querySelector(".pl-glow"), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "power2.out" }, 0)
+      .fromTo(pre.querySelector(".pl-line"), { strokeDasharray: 900, strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 1.0, ease: "power2.inOut" }, 0.05)
+      .fromTo(pre.querySelector(".pl-comet"), { opacity: 0, rotation: -90 }, { opacity: 1, rotation: 630, duration: 1.4, ease: "power2.out" }, 0.1)
+      .fromTo(pre.querySelector(".pl img"), { scale: 1.8, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.55, ease: "expo.out" }, 0.2)
       .to(n, { v: 100, duration: 1.2, ease: "power2.inOut", onUpdate: () => (pn.textContent = Math.round(n.v)) }, 0.05)
       .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 0.8, ease: "expo.inOut" }, 1.45)
       .add(heroIn(), 1.75);
