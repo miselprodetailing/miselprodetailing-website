@@ -17,8 +17,11 @@
   }), { rootMargin: "200px 0px" }) : null;
   /* start videos only after the page has loaded, so they don't slow the first paint */
   const startVids = () => vids.forEach((v) => { if (vio) vio.observe(v); else { v.src = v.dataset.src; v.play(); } });
-  const later = () => ("requestIdleCallback" in window ? requestIdleCallback(startVids, { timeout: 2500 }) : setTimeout(startVids, 1200));
-  if (document.readyState === "complete") later(); else window.addEventListener("load", later, { once: true });
+  /* first touch / scroll / mouse move starts them (the poster image shows until then) */
+  let vStarted = false;
+  const kick = () => { if (vStarted) return; vStarted = true; EV.forEach((e) => window.removeEventListener(e, kick, true)); startVids(); };
+  const EV = ["pointerdown", "touchstart", "scroll", "wheel", "keydown", "mousemove"];
+  EV.forEach((e) => window.addEventListener(e, kick, { capture: true, passive: true }));
 
   /* ---------- gallery: built from the photo list */
   const PK = Array.from({ length: 19 }, (_, i) => ["pk", `poliranje-keramika-${String(i + 1).padStart(2, "0")}`, "Poliranje i keramika"]);
