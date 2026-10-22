@@ -253,7 +253,7 @@
       else parts.push(`<span class="w"><span>${nd.outerHTML}</span></span>`);
     });
     h.innerHTML = parts.join("");
-    $$(".w", h).forEach((w) => { w.style.display = "inline-block"; w.style.overflow = "hidden"; w.style.verticalAlign = "top"; w.style.paddingTop = "0.06em"; });
+    $$(".w", h).forEach((w) => { w.style.display = "inline-block"; w.style.overflow = "hidden"; w.style.verticalAlign = "top"; w.style.paddingTop = "0.16em"; w.style.marginTop = "-0.1em"; });
     gsap.from($$(".w > span", h), { yPercent: 115, rotation: 6, duration: 0.8, ease: "power4.out", stagger: 0.07,
       scrollTrigger: { trigger: h, start: "top 85%" } });
     $$(".w > span", h).forEach((s) => (s.style.display = "inline-block"));
