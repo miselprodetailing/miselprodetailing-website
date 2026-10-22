@@ -45,7 +45,8 @@
     const y = window.scrollY;
     hdr.classList.toggle("scrolled", y > 30);
     hdr.classList.toggle("hide", y > lastY && y > 500 && !document.body.classList.contains("menu-open"));
-    mbar.classList.toggle("on", y > window.innerHeight * 0.6);
+    const bk = document.getElementById("zakazi").getBoundingClientRect();
+    mbar.classList.toggle("on", y > window.innerHeight * 0.8 && bk.top > window.innerHeight * 0.9);
     lastY = y;
   };
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
