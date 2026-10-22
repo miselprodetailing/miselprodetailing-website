@@ -1,512 +1,396 @@
-<title>Mišel Pro Detailing</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VM4WM82XNC"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-VM4WM82XNC");</script>
-<meta name="description" content="Mišel Pro Detailing — vrhunski auto detailing u Nišu. Usluge, paketi, kursevi, akademija, galerija i zakazivanje.">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap">
-<style>
-  :root{--accent:#D42B2B;--accent2:#ef4136;--ink:#14161c;color-scheme:light}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:"Montserrat",system-ui,sans-serif;color:var(--ink);background:#eef0f3;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,.disp{font-family:"Poppins",sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.01em;margin:0}
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Mišel Pro Detailing Niš · Poliranje, keramička zaštita, dubinsko pranje</title>
+  <meta name="description" content="Detailing studio u Nišu, Kajmakčalanska 14a. Višeslojno poliranje, keramička zaštita, dubinsko pranje, poliranje farova i šoferke, PPF. Detailer koji uči detailere. Zakaži termin online." />
+  <link rel="canonical" href="https://miselprodetailing.com/" />
+  <meta name="theme-color" content="#070707" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sr_RS" />
+  <meta property="og:title" content="Mišel Pro Detailing · Niš" />
+  <meta property="og:description" content="Poliranje, keramika i dubinsko pranje. Detailer koji uči detailere. Zakaži termin online." />
+  <meta property="og:url" content="https://miselprodetailing.com/" />
+  <meta property="og:image" content="https://miselprodetailing.com/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="preload" href="assets/fonts/Anton.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    document.documentElement.classList.add("js");
+    try { if (sessionStorage.getItem("mpd-intro")) document.documentElement.classList.add("no-pre"); } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Mišel Pro Detailing",
+    "description": "Detailing studio: poliranje, keramička zaštita, dubinsko pranje, poliranje farova i šoferke, PPF zaštita.",
+    "url": "https://miselprodetailing.com/",
+    "image": "https://miselprodetailing.com/assets/img/og.jpg",
+    "logo": "https://miselprodetailing.com/assets/img/logo.webp",
+    "telephone": "+381637826077",
+    "email": "mishell018@gmail.com",
+    "priceRange": "5.000–90.000 RSD",
+    "address": { "@type": "PostalAddress", "streetAddress": "Kajmakčalanska 14a", "addressLocality": "Niš", "addressCountry": "RS" },
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "17:00" }],
+    "sameAs": ["https://instagram.com/misel_pro_detailing", "https://www.tiktok.com/@misel_pro_detailing", "https://www.skool.com/misel-detailing-akademija-8635/about"]
+  }
+  </script>
+  <!-- Google Analytics (isti nalog kao na starom sajtu) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VM4WM82XNC"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-VM4WM82XNC");</script>
+</head>
+<body>
+  <a class="sr-only" href="#zakazi">Preskoči na zakazivanje</a>
 
-  /* ===== cinematic stage ===== */
-  .scroller{position:relative;z-index:1}
-  .stage{position:fixed;inset:0;overflow:hidden;z-index:0}
-  .sky{position:absolute;inset:0;background:radial-gradient(130% 90% at 50% -10%, #ffffff 0%, #e9ecf1 45%, #dde1e8 100%)}
-  .mood{position:absolute;inset:-10%;opacity:0;mix-blend-mode:multiply}
-  .mood.warm{background:radial-gradient(60% 50% at 30% 40%,rgba(255,170,120,.45),transparent 70%)}
-  .mood.cool{background:radial-gradient(60% 50% at 70% 60%,rgba(120,170,255,.4),transparent 70%)}
-  .floor{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,transparent,rgba(20,24,32,.10))}
-  .carwrap{position:absolute;left:50%;top:52%;width:min(1020px,94vw);will-change:transform}
-  .carwrap img{width:100%;display:block;filter:drop-shadow(0 30px 40px rgba(18,26,44,.28))}
-  .hl{position:absolute;top:56%;left:18%;width:26%;height:14%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,210,.95),rgba(255,230,160,.35),transparent 72%);filter:blur(4px);opacity:0;pointer-events:none}
-  .gloss{position:absolute;top:0;left:-40%;width:35%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
-
-  /* chrome */
-  .topbar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(14px,4vw,28px);background:linear-gradient(180deg,rgba(238,240,243,.9),transparent)}
-  .brand{display:flex;align-items:center;gap:9px;font-family:"Poppins";font-weight:800;font-size:.98rem}
-  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(212,43,43,.6)}
-  .brand span small{display:block;font-weight:500;font-size:.55rem;letter-spacing:.2em;color:#6b7280;text-transform:uppercase;margin-top:-2px}
-  .topbar .cta{font-family:"Poppins";font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:#fff;background:linear-gradient(180deg,var(--accent2),var(--accent));padding:9px 15px;border-radius:11px;box-shadow:0 6px 16px rgba(212,43,43,.3)}
-  .prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:45;width:0}
-  .plabel{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:40;font-family:"Poppins";font-weight:700;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#3a414c;display:flex;gap:9px;align-items:center;background:rgba(255,255,255,.72);backdrop-filter:blur(6px);padding:7px 15px;border-radius:999px;box-shadow:0 4px 14px rgba(18,26,44,.12)}
-  .plabel .bar{width:1px;height:16px;background:linear-gradient(var(--accent),transparent);animation:drop 1.6s ease-in-out infinite}
-  @keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
-
-  /* logo + menu */
-  .brand{text-decoration:none;color:inherit}
-  .brand .logo{height:42px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.2))}
-  .brand .bname{font-family:"Poppins";font-weight:800;line-height:1.05}
-  @media(max-width:559px){.brand{gap:8px}.brand .bname{font-size:.82rem}.brand .bname small{font-size:.5rem}}
-  @media(max-width:360px){.brand .bname small{display:none}}
-  .navr{display:flex;align-items:center;gap:10px}
-  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:40px;border:1px solid rgba(20,22,28,.16);background:rgba(255,255,255,.8);border-radius:11px;cursor:pointer;padding:0 12px;box-shadow:0 4px 12px rgba(18,26,44,.1)}
-  .burger span{height:2.5px;background:var(--ink);border-radius:2px;transition:.25s}
-  .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-  .burger.open span:nth-child(2){opacity:0}
-  .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-  @media(min-width:760px){.burger{display:none}}
-  @media(max-width:759px){.topbar .cta{display:none}}
-  .menu{position:fixed;top:62px;left:12px;right:12px;z-index:39;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border:1px solid rgba(20,22,28,.1);border-radius:16px;box-shadow:0 22px 54px rgba(18,26,44,.22);padding:8px;display:none;flex-direction:column;gap:2px}
-  .menu.open{display:flex;animation:mdrop .22s ease}
-  @keyframes mdrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-  .menu a{text-decoration:none;color:var(--ink);font-family:"Poppins";font-weight:700;font-size:.98rem;padding:14px 16px;border-radius:11px}
-  .menu a:hover,.menu a:active{background:var(--accent);color:#fff}
-  .menu a.mcta{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;text-align:center;margin-top:4px}
-
-  /* hero scroll cue */
-  .scrollcue{display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-top:24px;font-family:"Poppins";font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-shadow:0 1px 10px rgba(239,241,244,1)}
-  .scrollcue .ch{width:15px;height:15px;border-right:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(45deg);animation:bounce 1.4s infinite}
-  @keyframes bounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.45}50%{transform:rotate(45deg) translate(3px,3px);opacity:1}}
-
-  /* scenes */
-  .scene{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:74px 16px 46px;opacity:0;pointer-events:none;will-change:opacity,transform}
-  .scene .panel{width:100%;max-width:720px;max-height:86svh;overflow:auto;padding:clamp(18px,4vw,30px);text-align:center;scrollbar-width:none;
-     background:radial-gradient(64% 64% at 50% 44%,rgba(239,241,244,.9),rgba(239,241,244,.55) 52%,rgba(239,241,244,0) 80%)}
-  .scene .panel::-webkit-scrollbar{display:none}
-  .scene.active{pointer-events:auto}
-  .kicker{font-family:"Poppins";font-weight:700;text-transform:uppercase;letter-spacing:.26em;font-size:.68rem;color:var(--accent);text-shadow:0 1px 10px rgba(239,241,244,1),0 0 18px rgba(239,241,244,.9)}
-  .scene h2{font-size:clamp(1.7rem,5vw,2.8rem);margin:10px 0 0;text-shadow:0 2px 12px rgba(239,241,244,1),0 0 30px rgba(239,241,244,.95),0 1px 2px rgba(239,241,244,1)}
-  .scene .sub{color:#2b313b;margin:12px auto 0;max-width:46ch;font-size:clamp(.95rem,2.2vw,1.08rem);text-shadow:0 1px 10px rgba(239,241,244,1),0 0 18px rgba(239,241,244,.9)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:"Poppins";font-weight:700;font-size:.86rem;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;padding:14px 22px;border-radius:13px;cursor:pointer;border:1px solid transparent}
-  .btn-primary{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;box-shadow:0 10px 24px rgba(212,43,43,.3)}
-  .btn-ghost{background:#fff;border-color:rgba(20,22,28,.18);color:var(--ink)}
-  .btn-wa{background:#25D366;color:#063d1f}
-  .btnrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
-
-  #s-hero h1{font-size:clamp(2.3rem,7.5vw,4.4rem);color:var(--accent);line-height:1.02;text-shadow:0 2px 10px rgba(239,241,244,1),0 0 34px rgba(239,241,244,.95),0 1px 2px rgba(239,241,244,1)}
-  #s-hero .tag{font-family:"Poppins";font-weight:700;color:#1b1e25;font-size:clamp(1.1rem,3vw,1.6rem);margin:10px 0 0;text-shadow:0 2px 12px rgba(239,241,244,1),0 0 22px rgba(239,241,244,.9)}
-  #s-hero .sub{font-size:clamp(.98rem,2.4vw,1.2rem);color:#2b313b;max-width:42ch}
-
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
-  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat .n{font-family:"Poppins";font-weight:800;font-size:clamp(1.8rem,6vw,3rem);color:var(--accent);line-height:1}
-  .stat .l{color:#5b626e;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-top:7px;font-weight:600}
-
-  .rows{display:flex;flex-direction:column;gap:9px;margin-top:18px;text-align:left}
-  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.52);backdrop-filter:blur(7px);border-radius:13px;padding:12px 15px;box-shadow:0 2px 14px rgba(18,26,44,.07)}
-  .row .t{font-family:"Poppins";font-weight:700;font-size:.98rem}
-  .row .d{color:#6b7280;font-size:.8rem;margin-top:2px}
-  .row .p{font-family:"Poppins";font-weight:800;color:var(--accent);white-space:nowrap;font-size:1.05rem;text-align:right}
-  .row .p small{color:#9aa0ab;font-weight:600;font-size:.7rem;display:block}
-  .row .p small s{color:#b9bec7}
-
-  .pk{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:18px;text-align:left}
-  @media(max-width:620px){.pk{grid-template-columns:1fr}}
-  .pcard{background:rgba(255,255,255,.52);backdrop-filter:blur(7px);border-radius:16px;padding:16px;position:relative;box-shadow:0 2px 14px rgba(18,26,44,.07)}
-  .pcard.pop{border-color:var(--accent);box-shadow:0 10px 26px rgba(212,43,43,.14)}
-  .pcard .nm{font-family:"Poppins";font-weight:800;font-size:1.3rem;text-align:center}
-  .pcard .pop-tag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:"Poppins";font-weight:700;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
-  .pcard .pr{text-align:center;font-family:"Poppins";font-weight:800;color:var(--accent);margin:6px 0;font-size:1.1rem;line-height:1.25}
-  .pcard .pr small{color:#6b7280;font-weight:600;font-size:.68rem}
-  .pcard ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
-  .pcard li{font-size:.78rem;color:#374151;display:flex;gap:7px}.pcard li::before{content:"✦";color:var(--accent)}
-
-  .feats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;text-align:left}
-  @media(max-width:560px){.feats{grid-template-columns:1fr}}
-  .ft{background:rgba(255,255,255,.5);backdrop-filter:blur(7px);border-radius:13px;padding:14px;box-shadow:0 2px 14px rgba(18,26,44,.06)}
-  .ft .nn{font-family:"Poppins";font-weight:800;color:var(--accent);font-size:1rem}
-  .ft h4{font-family:"Poppins";font-weight:700;font-size:.98rem;margin:4px 0}
-  .ft p{color:#6b7280;font-size:.8rem;margin:0}
-
-  .stp{display:flex;flex-direction:column;gap:10px;margin-top:16px;text-align:left}
-  .stp .s{display:grid;grid-template-columns:48px 1fr;gap:13px;align-items:center;background:rgba(255,255,255,.62);backdrop-filter:blur(8px);border-radius:14px;padding:13px 15px;box-shadow:0 2px 14px rgba(18,26,44,.08)}
-  .stp .num{width:48px;height:48px;border-radius:12px;border:2px solid var(--accent);background:#fff;display:grid;place-items:center;font-family:"Poppins";font-weight:800;color:var(--accent);font-size:1.05rem}
-  .stp h4{font-family:"Poppins";font-weight:700;font-size:1.05rem;margin:0 0 3px;color:#14161c}
-  .stp p{color:#374151;font-size:.9rem;margin:0;line-height:1.45}
-
-  .rev{background:rgba(255,255,255,.52);backdrop-filter:blur(7px);border-radius:14px;padding:16px;text-align:left;margin-top:14px;box-shadow:0 2px 14px rgba(18,26,44,.07)}
-  .rev .st{color:#f5b50a;letter-spacing:2px}
-  .rev p{color:#2f3640;font-size:.86rem;margin:8px 0 10px}
-  .rev .who{display:flex;align-items:center;gap:10px}
-  .rev .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:"Poppins";font-weight:800;font-size:.9rem}
-  .rev .nm{font-family:"Poppins";font-weight:700;font-size:.88rem}.rev .sr{font-size:.72rem;color:#9aa0ab}
-
-  .gfilters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-  .gfilters button{border:1px solid rgba(20,22,28,.18);background:rgba(255,255,255,.7);color:#4b5563;font-family:"Poppins";font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;padding:9px 16px;border-radius:999px;cursor:pointer}
-  .gfilters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .gg{display:flex;gap:10px;margin-top:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
-  .gg .c{flex:0 0 64%;aspect-ratio:4/3;border-radius:13px;overflow:hidden;scroll-snap-align:center;background:#e2e5ea;cursor:zoom-in;box-shadow:0 4px 16px rgba(18,26,44,.12)}
-  @media(min-width:620px){.gg .c{flex:0 0 42%}}
-  @media(min-width:900px){.gg .c{flex:0 0 31%}}
-  .gg .c img{width:100%;height:100%;object-fit:cover;display:block}
-  .ghint{font-size:.72rem;color:#5b6472;letter-spacing:.12em;text-transform:uppercase;margin-top:8px;font-family:"Poppins";font-weight:700;text-shadow:0 1px 8px rgba(239,241,244,.95)}
-  .lb{position:fixed;inset:0;z-index:999;background:rgba(10,12,16,.93);display:none;place-items:center;padding:18px;cursor:zoom-out}
-  .lb.on{display:grid}
-  .lb img{max-width:96vw;max-height:90vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
-  .lb .x{position:absolute;top:12px;right:20px;color:#fff;font-size:1.9rem;font-family:"Poppins";font-weight:700;cursor:pointer;line-height:1}
-
-  .vids{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-  @media(max-width:560px){.vids{grid-template-columns:1fr}}
-  .vids .v{position:relative;aspect-ratio:16/9;border-radius:13px;overflow:hidden;box-shadow:0 4px 18px rgba(18,26,44,.16)}
-  .vids iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .book{margin-top:16px;text-align:left;display:grid;gap:9px}
-  .book input,.book select{width:100%;padding:11px 13px;border:1px solid rgba(20,22,28,.18);border-radius:11px;font:inherit;background:#fff}
-  .ci{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-  .ci a{text-decoration:none;color:var(--ink);font-family:"Poppins";font-weight:700;font-size:.82rem;background:#fff;border:1px solid rgba(20,22,28,.12);padding:10px 14px;border-radius:11px}
-  .note{color:#505a68;font-size:.8rem;font-weight:500;margin-top:12px;text-shadow:0 1px 8px rgba(239,241,244,.95)}
-  /* tanak stroke + beli oreol da siva slova budu jača preko auta */
-  .scene .sub,.note,.ghint,.row .d,.stp p,.ft p,.rev p,.stat .l,.pcard li,.pcard .pr small{
-    text-shadow:0 0 1px rgba(20,22,28,.45),0 0 2px rgba(20,22,28,.28),0 1px 9px rgba(239,241,244,.95)}
-  .row .d,.stp p,.ft p,.stat .l{color:#3b4350}
-  @media (prefers-reduced-motion:reduce){.plabel .bar{animation:none}}
-</style>
-
-<div class="stage">
-  <div class="sky"></div>
-  <div class="mood warm" id="mWarm"></div>
-  <div class="mood cool" id="mCool"></div>
-  <div class="floor"></div>
-  <div class="carwrap" id="carwrap">
-    <div class="hl" id="hl"></div>
-    <img src="hero-auto.webp" alt="Automobil — Mišel Pro Detailing">
-    <div class="gloss" id="gloss"></div>
+  <!-- preloader: amblem kao u videima -->
+  <div id="pre" aria-hidden="true">
+    <div class="emb-wrap"><div class="emb">
+            <div class="e-ticks"></div><div class="e-major"></div>
+            <div class="e-core"></div>
+            <svg class="e-chrome" viewBox="0 0 470 470">
+              <defs><linearGradient id="chromeG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffffff"/><stop offset="0.28" stop-color="#6d6d72"/><stop offset="0.5" stop-color="#f4f4f6"/>
+                <stop offset="0.74" stop-color="#46464a"/><stop offset="1" stop-color="#dcdcdf"/></linearGradient></defs>
+              <circle class="e-ring" cx="235" cy="235" r="226" fill="none" stroke="url(#chromeG)" stroke-width="7"/>
+              <circle cx="235" cy="235" r="216" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+            </svg>
+            <div class="e-comet"></div>
+          </div><img src="assets/img/logo.webp" alt="" /></div>
+    <div class="pct"><span id="pctN">0</span>%</div>
   </div>
-</div>
 
-<div class="prog" id="prog"></div>
-<div class="topbar">
-  <a class="brand" href="#" data-goto="0"><img class="logo" src="logo.png" alt="Mišel Pro Detailing logo"><span class="bname">Mišel Pro Detailing<small>Niš · Auto detailing</small></span></a>
-  <div class="navr">
-    <a class="cta" href="#" data-goto="9">Zakaži termin</a>
-    <button class="burger" id="burger" aria-label="Otvori meni"><span></span><span></span><span></span></button>
-  </div>
-</div>
-<nav class="menu" id="menu">
-  <a href="#" data-goto="0">Početak</a>
-  <a href="#" data-goto="2">Usluge</a>
-  <a href="#" data-goto="3">Paketi</a>
-  <a href="#" data-goto="4">Edukacija</a>
-  <a href="#" data-goto="5">O meni</a>
-  <a href="#" data-goto="6">Kako radimo</a>
-  <a href="#" data-goto="7">Recenzije</a>
-  <a href="#" data-goto="8">Galerija</a>
-  <a class="mcta" href="#" data-goto="9">Zakaži termin</a>
-</nav>
-<div class="plabel"><span class="bar"></span><span id="plab">Skroluj</span></div>
-
-<section class="scene" id="s-hero" data-i="0" data-name="Početak">
-  <div class="panel">
-    <div class="kicker">Mišel Pro Detailing · Niš</div>
-    <h1>Detailer koji uči detailere</h1>
-    <p class="tag">Zamislite šta radi vašem autu.</p>
-    <p class="sub">Jedini detailing studio u Nišu čiji vlasnik drži kurseve poliranja i keramike. Kod nas ne radi tehničar — radi instruktor.</p>
-    <div class="btnrow">
-      <a class="btn btn-primary" href="tel:+381637826077">Pozovite nas</a>
-      <a class="btn btn-ghost" href="#" data-goto="9">Zakaži termin</a>
+  <header class="hdr" id="hdr">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Mišel Pro Detailing, početak">
+        <img src="assets/img/logo.webp" alt="Mišel Pro Detailing logo" width="46" height="46" />
+        <span><b>MIŠEL PRO DETAILING</b><small>NIŠ · AUTO DETAILING</small></span>
+      </a>
+      <nav class="nav" aria-label="Glavni meni">
+        <a href="#usluge">Usluge</a><a href="#paketi">Paketi</a><a href="#radovi">Radovi</a><a href="#akademija">Akademija</a><a href="#o-meni">O meni</a><a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn btn-red" href="#zakazi"><span class="shine"></span>Zakaži termin</a>
+      <button class="burger" id="burger" aria-label="Otvori meni" aria-expanded="false"><span></span></button>
     </div>
-    <div class="scrollcue">Skrolujte nadole<span class="ch"></span></div>
-  </div>
-</section>
+  </header>
 
-<section class="scene" id="s-stats" data-i="1" data-name="Iskustvo">
-  <div class="panel">
-    <div class="kicker">Zašto baš mi</div><h2>Brojke koje govore</h2>
-    <div class="stats">
-      <div class="stat"><div class="n">500+</div><div class="l">Zadovoljnih klijenata</div></div>
-      <div class="stat"><div class="n">7+</div><div class="l">Godina iskustva</div></div>
-      <div class="stat"><div class="n">100%</div><div class="l">Profesionalni proizvodi</div></div>
-      <div class="stat"><div class="n">★5.0</div><div class="l">Ocena klijenata</div></div>
+  <div id="mmenu" aria-hidden="true">
+    <a class="l" href="#usluge">Usluge</a><a class="l" href="#paketi">Paketi</a><a class="l" href="#radovi">Radovi</a>
+    <a class="l" href="#akademija">Akademija</a><a class="l" href="#o-meni">O meni</a><a class="l" href="#kontakt">Kontakt</a>
+    <div class="m-cta">
+      <a class="btn btn-red" href="#zakazi">Zakaži termin</a>
+      <a class="btn btn-wa" href="https://wa.me/381637447795" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
-</section>
 
-<section class="scene" id="s-usluge" data-i="2" data-name="Usluge">
-  <div class="panel">
-    <div class="kicker">Naše usluge</div><h2>Kompletna nega vašeg vozila</h2>
-    <p class="sub">Profesionalni alati i premium proizvodi za rezultate koji se vide i osećaju.</p>
-    <div class="rows">
-      <div class="row"><div><div class="t">Premium pranje</div><div class="d">Kompletno pranje eksterijera do detalja</div></div><div class="p">5.000<small>RSD</small></div></div>
-      <div class="row"><div><div class="t">Dubinsko pranje</div><div class="d">Enterijer i eksterijer — svaki kutak</div></div><div class="p">10.000<small>RSD</small></div></div>
-      <div class="row"><div><div class="t">Poliranje šoferke</div><div class="d">Bolja vidljivost i bezbednost, posebno noću</div></div><div class="p">6.000<small>RSD</small></div></div>
-      <div class="row"><div><div class="t">Poliranje farova</div><div class="d">Kristalno čisti farovi — oba fara</div></div><div class="p">5.000<small>RSD</small></div></div>
-      <div class="row"><div><div class="t">PPF zaštita farova</div><div class="d">Nevidljiva zaštitna folija — oba fara</div></div><div class="p">8.000<small>RSD</small></div></div>
-      <div class="row"><div><div class="t">Zaštita kožnog enterijera</div><div class="d">Dubinsko čišćenje, hidratacija i zaštita kože</div></div><div class="p">na upit</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="scene" id="s-paketi" data-i="3" data-name="Paketi">
-  <div class="panel">
-    <div class="kicker">Paketi</div><h2>Izaberite paket po meri</h2>
-    <p class="sub">Najpopularnije usluge spojene u pakete. Cene za limuzine — za džip/SUV na upit.</p>
-    <div class="pk">
-      <div class="pcard"><div class="nm">GREY</div><div class="pr">28.000–39.000<br><small>RSD · keramika 1–3 god.</small></div>
-        <ul><li>Višeslojno poliranje</li><li>Dekontaminacija laka</li><li>Keramička zaštita</li></ul></div>
-      <div class="pcard pop"><span class="pop-tag">Najpopularniji</span><div class="nm">BLACK</div><div class="pr">35.000–48.000<br><small>RSD · keramika 1–3 god.</small></div>
-        <ul><li>Višeslojno poliranje</li><li>Dekontaminacija laka</li><li>Keramička zaštita</li><li>Dubinsko pranje enterijera</li></ul></div>
-      <div class="pcard"><div class="nm">BLACK +</div><div class="pr">90.000<br><small>RSD · kompletna zaštita</small></div>
-        <ul><li>Felne: priprema + keramika</li><li>Keramika do 3 god.</li><li>PPF farova</li><li>Koža, sva stakla, enterijer</li></ul></div>
-    </div>
-    <div class="btnrow"><a class="btn btn-primary" href="#" data-goto="10">Zakaži paket</a></div>
-  </div>
-</section>
-
-<section class="scene" id="s-edu" data-i="4" data-name="Edukacija">
-  <div class="panel">
-    <div class="kicker">Edukacija</div><h2>Učim druge da rade ono što ja radim svaki dan</h2>
-    <p class="sub">Bilo da si početnik ili želiš da usavršiš tehniku — investiraj u znanje koje zarađuje.</p>
-    <div class="vids">
-      <div class="v"><iframe src="https://www.youtube-nocookie.com/embed/p_xkLwMPYxc?rel=0&amp;modestbranding=1" title="Online kurs detailinga" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-      <div class="v"><iframe src="https://www.youtube-nocookie.com/embed/of2_4Jb9gWo?rel=0&amp;modestbranding=1" title="Kurs — Dubinsko pranje i farovi" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-    <div class="rows">
-      <div class="row"><div><div class="t">Online kurs detailinga</div><div class="d">Poliranje, keramika i dubinsko — doživotan pristup</div></div><div class="p">74€<small><s>100€</s></small></div></div>
-      <div class="row"><div><div class="t">Dubinsko pranje &amp; Poliranje farova</div><div class="d">Profi tehnike korak po korak — video lekcije</div></div><div class="p">44€<small><s>70€</s></small></div></div>
-      <div class="row"><div><div class="t">Obuka 1 na 1 u studiju (VIP)</div><div class="d">8h praktičnog rada, moje mašine i materijal</div></div><div class="p">450€<small>/8h</small></div></div>
-      <a class="row" href="https://www.skool.com/misel-detailing-akademija-8635/about" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><div><div class="t">Mišel Detailing Akademija →</div><div class="d">Zajednica + svi kursevi · 7 dana besplatno</div></div><div class="p">$14<small>/mes</small></div></a>
-    </div>
-    <div class="btnrow">
-      <a class="btn btn-primary" href="https://www.skool.com/misel-detailing-akademija-8635/about" target="_blank" rel="noopener">Upiši se u akademiju</a>
-      <a class="btn btn-ghost" href="https://mishellspark.gumroad.com" target="_blank" rel="noopener">Kupi online kurs</a>
-      <a class="btn btn-wa" href="https://wa.me/381637447795" target="_blank" rel="noopener">Zakaži obuku</a>
-    </div>
-    <p class="note">* Cene kurseva su bez PDV-a. PDV se obračunava automatski.</p>
-  </div>
-</section>
-
-<section class="scene" id="s-zasto" data-i="5" data-name="O meni">
-  <div class="panel">
-    <div class="kicker">Zašto Mišel Pro Detailing</div><h2>Razlika je u detaljima</h2>
-    <p class="sub">Zovem se Mišel. Počeo sam pre 7+ godina jer me je fascinirao proces — da od zapuštenog, izbledelog laka napravim ogledalo. Danas vodim studio, snimam za YouTube i TikTok, i držim kurseve. Kad ti radim auto, radiš sa nekim ko od ovog posla živi, predaje i stvara.</p>
-    <div class="feats">
-      <div class="ft"><div class="nn">01</div><h4>Premium proizvodi</h4><p>Profesionalni proizvodi vodećih svetskih brendova za rezultate koji traju.</p></div>
-      <div class="ft"><div class="nn">02</div><h4>Pažnja do detalja</h4><p>Svaki auto tretiramo kao da je naš. Bez preskakanja koraka.</p></div>
-      <div class="ft"><div class="nn">03</div><h4>Iskustvo i znanje</h4><p>7+ godina, 500+ automobila i kursevi za detailere.</p></div>
-      <div class="ft"><div class="nn">04</div><h4>Transparentnost</h4><p>Jasne cene, realni rokovi i pre/posle dokumentacija.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="scene" id="s-proces" data-i="6" data-name="Kako radimo">
-  <div class="panel">
-    <div class="kicker">Kako radimo</div><h2>Od poziva do savršenstva</h2>
-    <p class="sub">Jednostavan proces u 4 koraka do auta koji izgleda bolje nego iz salona.</p>
-    <div class="stp">
-      <div class="s"><div class="num">01</div><div><h4>Kontaktirajte nas</h4><p>Pozovite ili pišite na Instagramu. Dogovaramo termin i biramo pravi paket.</p></div></div>
-      <div class="s"><div class="num">02</div><div><h4>Pregled vozila</h4><p>Detaljno pregledamo lak i enterijer, pravimo plan rada i informišemo vas pre početka.</p></div></div>
-      <div class="s"><div class="num">03</div><div><h4>Profesionalan tretman</h4><p>Puna pažnja svakom autu. Bez žurbe, bez preskakanja — od početka do kraja.</p></div></div>
-      <div class="s"><div class="num">04</div><div><h4>Predaja i zadovoljstvo</h4><p>Pre/posle dokumentacija, saveti za održavanje i osmeh kad vidite svoj auto.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="scene" id="s-rec" data-i="7" data-name="Recenzije">
-  <div class="panel">
-    <div class="kicker">Recenzije</div><h2>Šta kažu naši klijenti</h2>
-    <p class="sub">Ne morate da nam verujete na reč — pustite da rezultati i klijenti govore.</p>
-    <div class="rev"><div class="st">★★★★★</div><p>Saradnja vrhunska sa Miselom — precizan, tačan, odradio posao do detalja. Od prljavog auta napravio kao nov, uz savete kako da ga održavam. Velik respekt i preporuke za majstora!</p><div class="who"><div class="av" style="background:#D42B2B">L</div><div><div class="nm">Lazar Čolović</div><div class="sr">Google recenzija</div></div></div></div>
-    <div class="rev"><div class="st">★★★★★</div><p>Svaka preporuka, organizacija 10/10 a rad 100/10. Ispoštovan dogovor maksimalno, a keramiku neću ni da komentarišem — kola vraćena u fabričko stanje. Naravno da ću se ponovo vratiti.</p><div class="who"><div class="av" style="background:#1a9e55">M</div><div><div class="nm">Mihajlo Petković</div><div class="sr">Google recenzija</div></div></div></div>
-    <div class="btnrow"><a class="btn btn-primary" href="https://www.google.com/search?q=Mi%C5%A1el+Pro+Detailing+Ni%C5%A1" target="_blank" rel="noopener">Sve recenzije na Google-u →</a></div>
-  </div>
-</section>
-
-<section class="scene" id="s-gal" data-i="8" data-name="Galerija">
-  <div class="panel">
-    <div class="kicker">Galerija</div><h2>Naši radovi</h2>
-    <p class="sub">Rezultati rada — svaki automobil tretiramo sa maksimalnom pažnjom.</p>
-    <div class="gfilters" id="gfilters">
-      <button class="on" data-f="all">Svi radovi</button>
-      <button data-f="pk">Poliranje &amp; keramika</button>
-      <button data-f="dp">Dubinsko pranje</button>
-    </div>
-    <div class="gg" id="gg">
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-01.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-02.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-03.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-04.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-05.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-06.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-07.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-08.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-09.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-10.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-11.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-12.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-13.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-14.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-15.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-16.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-17.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-18.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="pk"><img src="poliranje-keramika-19.jpg" loading="lazy" alt="Poliranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-01.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-02.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-03.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-04.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-05.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-06.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-07.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-08.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-09.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-10.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-11.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-12.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-13.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-14.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-15.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-16.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-17.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-18.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-19.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-20.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-21.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-22.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-23.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-24.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-25.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-26.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-      <div class="c" data-cat="dp"><img src="dubinsko-pranje-27.jpg" loading="lazy" alt="Dubinsko pranje"></div>
-    </div>
-    <div class="ghint">← prevuci za još fotki →</div>
-    <p class="note" id="gnote"></p>
-  </div>
-</section>
-
-<section class="scene" id="s-book" data-i="9" data-name="Zakazivanje">
-  <div class="panel">
-    <div class="kicker">Online zakazivanje</div><h2>Zakažite termin online</h2>
-    <p class="sub">Popunite formu pa pošaljite na WhatsApp ili email — javljamo se u roku od 24h.</p>
-    <form class="book" id="bookForm">
-      <input id="f-ime" placeholder="Ime i prezime" required>
-      <input id="f-tel" placeholder="Broj telefona — 06X XXX XXXX" required>
-      <input id="f-auto" placeholder="Model automobila — npr. BMW F30">
-      <select id="f-usluga"><option value="">Izaberite paket / uslugu</option><option>GREY paket</option><option>BLACK paket</option><option>BLACK + paket</option><option>Premium pranje</option><option>Dubinsko pranje</option><option>Poliranje farova</option><option>PPF zaštita farova</option><option>Obuka 1 na 1</option></select>
-      <input id="f-nap" placeholder="Napomena (opciono)">
-      <div class="btnrow" style="margin-top:2px">
-        <button type="submit" class="btn btn-primary">Pošalji zahtev</button>
-        <a class="btn btn-wa" id="waBtn" href="https://wa.me/381637447795" target="_blank" rel="noopener">ili WhatsApp</a>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-media">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp" aria-hidden="true">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
       </div>
-      <p class="note" id="bookMsg">📩 Odgovaramo u roku od 24h.</p>
-    </form>
-  </div>
-</section>
+      <div class="wrap">
+        <div class="hero-txt">
+          <span class="kicker">Niš · Kajmakčalanska 14a</span>
+          <h1 class="display">
+            <span class="ln"><span>Detailer</span></span>
+            <span class="ln"><span>koji uči</span></span>
+            <span class="ln"><span class="red">detailere</span></span>
+          </h1>
+          <p class="sub">Poliranje, keramička zaštita i dubinsko pranje. Jedini detailing studio u Nišu čiji vlasnik drži kurseve poliranja i keramike. <b>Kod nas ne radi tehničar, radi instruktor.</b></p>
+          <div class="ctas">
+            <a class="btn btn-red mag" href="#zakazi"><span class="shine"></span>Zakaži termin</a>
+            <a class="btn btn-ghost mag" href="tel:+381637826077">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              063 78 26 077
+            </a>
+          </div>
+          <div class="trust">
+            <span><i>★★★★★</i> 5.0 Google</span><span class="dot"></span><span>500+ automobila</span><span class="dot"></span><span>7+ godina iskustva</span>
+          </div>
+        </div>
+        <div class="hero-reel" id="reel">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp" aria-label="Hyundai Kona N posle poliranja i keramike">
+            <source src="assets/video/hero.mp4" type="video/mp4" />
+          </video>
+          <span class="tag"><b>●</b> Kona N · poliranje + keramika</span>
+        </div>
+      </div>
+      <span class="scroll-cue">SKROLUJ</span>
+    </section>
 
-<section class="scene" id="s-cta" data-i="10" data-name="Kontakt">
-  <div class="panel">
-    <div class="kicker">Zakažite termin</div><h2>Spremni da vratimo sjaj vašem automobilu?</h2>
-    <p class="sub">Javite nam se — odgovaramo brzo i zakazujemo termin koji vam odgovara.</p>
-    <div class="btnrow"><a class="btn btn-primary" href="tel:+381637826077">📞 Pozovite odmah</a></div>
-    <div class="ci">
-      <a href="tel:+381637826077">☎ 063 78 26 077</a>
-      <a href="https://wa.me/381637447795" target="_blank" rel="noopener">✆ WhatsApp</a>
-      <a href="mailto:mishell018@gmail.com">✉ Email</a>
-      <a href="https://instagram.com/misel_pro_detailing" target="_blank" rel="noopener">◎ Instagram</a>
-      <a href="https://www.tiktok.com/@misel_pro_detailing" target="_blank" rel="noopener">♪ TikTok</a>
+
+    <!-- BROJKE -->
+    <section class="sec hexbg card-in" id="brojke">
+      <div class="wrap">
+        <span class="kicker rv">Zašto baš mi</span>
+        <h2 class="h2 display split">Brojke koje <em>govore</em></h2>
+        <div class="stats">
+          <div class="stat rv"><div class="n" data-count="500"><small>+</small></div><div class="l">Zadovoljnih klijenata</div></div>
+          <div class="stat rv"><div class="n" data-count="7"><small>+</small></div><div class="l">Godina iskustva</div></div>
+          <div class="stat rv"><div class="n" data-count="10"></div><div class="l">Kurseva u akademiji</div></div>
+          <div class="stat rv"><div class="n">5.0<small>★</small></div><div class="l">Ocena na Google-u</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USLUGE -->
+    <section class="sec alt card-in" id="usluge">
+      <div class="wrap">
+        <span class="kicker rv">Usluge</span>
+        <h2 class="h2 display split">Kompletna nega <em>tvog auta</em></h2>
+        <p class="lead rv">Profesionalne mašine i premium proizvodi. Svaki korak se radi do kraja, bez preskakanja.</p>
+        <div class="svc-grid">
+          <article class="svc rv"><div class="ph"><span class="no">01</span><img src="assets/img/poliranje-keramika-13.webp" alt="Ispran i osušen BMW serije 3" loading="lazy" /></div>
+            <div class="bd"><h3>Premium pranje</h3><p>Kompletno pranje eksterijera do detalja, felne, pragovi i stakla.</p>
+            <div class="pr"><b>5.000<small>RSD</small></b><a href="#zakazi" data-pick="Premium pranje">Zakaži →</a></div></div></article>
+          <article class="svc rv"><div class="ph"><span class="no">02</span><img src="assets/img/dubinsko-pranje-21.webp" alt="Enterijer posle dubinskog pranja" loading="lazy" /></div>
+            <div class="bd"><h3>Dubinsko pranje</h3><p>Enterijer i eksterijer. Sedišta, tepisi, plafon i svaki kutak.</p>
+            <div class="pr"><b>10.000<small>RSD</small></b><a href="#zakazi" data-pick="Dubinsko pranje">Zakaži →</a></div></div></article>
+          <article class="svc rv"><div class="ph"><span class="no">03</span><video autoplay muted loop playsinline preload="none" poster="assets/img/poliranje-poster.webp" aria-label="Poliranje šoferke mašinom"><source src="assets/video/poliranje.mp4" type="video/mp4" /></video></div>
+            <div class="bd"><h3>Poliranje šoferke</h3><p>Skidamo ogrebotine od brisača i zamućenje. Bolja vidljivost, posebno noću.</p>
+            <div class="pr"><b>6.000<small>RSD</small></b><a href="#zakazi" data-pick="Poliranje šoferke">Zakaži →</a></div></div></article>
+          <article class="svc rv"><div class="ph"><span class="no">04</span><img src="assets/img/poliranje-keramika-08.webp" alt="BMW serije 5 sa ispoliranim farovima" loading="lazy" /></div>
+            <div class="bd"><h3>Poliranje farova</h3><p>Zamućeni i požuteli farovi ponovo kristalno čisti. Cena za oba fara.</p>
+            <div class="pr"><b>5.000<small>RSD</small></b><a href="#zakazi" data-pick="Poliranje farova">Zakaži →</a></div></div></article>
+          <article class="svc rv"><div class="ph"><span class="no">05</span><img src="assets/img/poliranje-keramika-18.webp" alt="Prednji deo BMW-a sa zaštićenim farovima" loading="lazy" /></div>
+            <div class="bd"><h3>PPF zaštita farova</h3><p>Nevidljiva zaštitna folija štiti farove od kamenčića i ogrebotina. Oba fara.</p>
+            <div class="pr"><b>8.000<small>RSD</small></b><a href="#zakazi" data-pick="PPF zaštita farova">Zakaži →</a></div></div></article>
+          <article class="svc rv"><div class="ph"><span class="no">06</span><img src="assets/img/dubinsko-pranje-22.webp" alt="Očišćena kožna sedišta" loading="lazy" /></div>
+            <div class="bd"><h3>Zaštita kožnog enterijera</h3><p>Dubinsko čišćenje, hidratacija i zaštita kože da ne puca i ne bledi.</p>
+            <div class="pr"><b>Na upit</b><a href="#zakazi" data-pick="Zaštita kožnog enterijera">Pitaj →</a></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAKETI -->
+    <section class="sec hexbg card-in" id="paketi">
+      <div class="wrap">
+        <span class="kicker rv">Paketi</span>
+        <h2 class="h2 display split">Izaberi <em>paket</em></h2>
+        <p class="lead rv">Najtraženije usluge spojene u pakete. Raspon cene zavisi od stanja laka i veličine auta. Tačnu cenu dobijaš posle pregleda vozila.</p>
+        <div class="pk-grid">
+          <article class="pk grey"><div class="bgimg"><img src="assets/img/poliranje-keramika-10.webp" alt="" loading="lazy" /></div>
+            <div class="nm">GREY</div>
+            <div class="price">28.000–39.000<small>RSD · keramika 1–3 godine</small></div>
+            <ul><li>Višeslojno poliranje laka</li><li>Dekontaminacija laka</li><li>Keramička zaštita</li></ul>
+            <a class="btn btn-ghost" href="#zakazi" data-pick="GREY paket">Zakaži GREY</a></article>
+          <article class="pk black"><span class="badge">Najpopularniji</span><div class="bgimg"><img src="assets/img/poliranje-keramika-16.webp" alt="" loading="lazy" /></div>
+            <div class="nm">BLACK</div>
+            <div class="price">35.000–48.000<small>RSD · keramika 1–3 godine</small></div>
+            <ul><li>Višeslojno poliranje laka</li><li>Dekontaminacija laka</li><li>Keramička zaštita</li><li>Dubinsko pranje enterijera</li></ul>
+            <a class="btn btn-red" href="#zakazi" data-pick="BLACK paket"><span class="shine"></span>Zakaži BLACK</a></article>
+          <article class="pk plus"><div class="bgimg"><img src="assets/img/poliranje-keramika-12.webp" alt="" loading="lazy" /></div>
+            <div class="nm">BLACK <span>+</span></div>
+            <div class="price">90.000<small>RSD · kompletna zaštita</small></div>
+            <ul><li>Sve iz BLACK paketa</li><li>Keramička zaštita do 3 godine</li><li>Felne: priprema i keramika</li><li>PPF zaštita farova</li><li>Zaštita kože, svih stakala i enterijera</li></ul>
+            <a class="btn btn-ghost" href="#zakazi" data-pick="BLACK + paket">Zakaži BLACK +</a></article>
+        </div>
+        <p class="pk-note rv">Cene su za limuzine. Za džip i SUV cena na upit.</p>
+      </div>
+    </section>
+
+    <!-- RADOVI -->
+    <section class="sec alt card-in" id="radovi">
+      <div class="wrap gal-head">
+        <div><span class="kicker rv">Radovi</span><h2 class="h2 display split">Rezultati <em>govore</em></h2></div>
+        <div class="gal-ctl rv" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <div class="tabs" role="tablist" aria-label="Filter radova">
+          <button class="on" data-f="all" role="tab" aria-selected="true">Svi</button>
+          <button data-f="pk" role="tab" aria-selected="false">Poliranje i keramika</button>
+          <button data-f="dp" role="tab" aria-selected="false">Dubinsko pranje</button>
+        </div>
+        <div class="gal-nav"><button id="gPrev" aria-label="Prethodne slike">←</button><button id="gNext" aria-label="Sledeće slike">→</button></div>
+        </div>
+      </div>
+      <div class="gal-pin" id="galPin"><div class="gal-track" id="galTrack"><figure data-c="pk" data-i="0"><img src="assets/img/poliranje-keramika-01.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="1"><img src="assets/img/dubinsko-pranje-01.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="2"><img src="assets/img/poliranje-keramika-02.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="3"><img src="assets/img/dubinsko-pranje-02.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="4"><img src="assets/img/poliranje-keramika-03.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="5"><img src="assets/img/dubinsko-pranje-03.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="6"><img src="assets/img/poliranje-keramika-04.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="7"><img src="assets/img/dubinsko-pranje-04.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="8"><img src="assets/img/poliranje-keramika-05.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="9"><img src="assets/img/dubinsko-pranje-05.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="10"><img src="assets/img/poliranje-keramika-06.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="11"><img src="assets/img/dubinsko-pranje-06.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="12"><img src="assets/img/poliranje-keramika-07.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="13"><img src="assets/img/dubinsko-pranje-07.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="14"><img src="assets/img/poliranje-keramika-08.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="15"><img src="assets/img/dubinsko-pranje-08.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="16"><img src="assets/img/poliranje-keramika-09.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="17"><img src="assets/img/dubinsko-pranje-09.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="18"><img src="assets/img/poliranje-keramika-10.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="19"><img src="assets/img/dubinsko-pranje-10.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="20"><img src="assets/img/poliranje-keramika-11.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="21"><img src="assets/img/dubinsko-pranje-11.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="22"><img src="assets/img/poliranje-keramika-12.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="23"><img src="assets/img/dubinsko-pranje-12.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="24"><img src="assets/img/poliranje-keramika-13.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="25"><img src="assets/img/dubinsko-pranje-13.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="26"><img src="assets/img/poliranje-keramika-14.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="27"><img src="assets/img/dubinsko-pranje-14.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="28"><img src="assets/img/poliranje-keramika-15.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="29"><img src="assets/img/dubinsko-pranje-15.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="30"><img src="assets/img/poliranje-keramika-16.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="31"><img src="assets/img/dubinsko-pranje-16.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="32"><img src="assets/img/poliranje-keramika-17.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="33"><img src="assets/img/dubinsko-pranje-17.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="34"><img src="assets/img/poliranje-keramika-18.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="35"><img src="assets/img/dubinsko-pranje-18.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="pk" data-i="36"><img src="assets/img/poliranje-keramika-19.webp" alt="Poliranje i keramika: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Poliranje i keramika</figcaption></figure><figure data-c="dp" data-i="37"><img src="assets/img/dubinsko-pranje-19.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="38"><img src="assets/img/dubinsko-pranje-20.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="39"><img src="assets/img/dubinsko-pranje-21.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="40"><img src="assets/img/dubinsko-pranje-22.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="41"><img src="assets/img/dubinsko-pranje-23.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="42"><img src="assets/img/dubinsko-pranje-24.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="43"><img src="assets/img/dubinsko-pranje-25.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="44"><img src="assets/img/dubinsko-pranje-26.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure><figure data-c="dp" data-i="45"><img src="assets/img/dubinsko-pranje-27.webp" alt="Dubinsko pranje: rad studija Mišel Pro Detailing" loading="lazy" decoding="async" width="1000" height="666"/><figcaption>Dubinsko pranje</figcaption></figure></div></div>
+      <p class="gal-hint">← prevuci za još →</p>
+    </section>
+
+    <!-- AKADEMIJA -->
+    <section class="sec hexbg card-in" id="akademija">
+      <div class="wrap acad">
+        <div class="acad-l">
+          <span class="kicker rv">Edukacija</span>
+          <h2 class="h2 display split">Učim druge da rade <em>ono što ja radim</em></h2>
+          <p class="lead rv">Bilo da tek počinješ ili hoćeš da usavršiš tehniku, uči od nekog ko ovaj posao radi svaki dan.</p>
+        </div>
+        <div>
+          <div class="courses">
+            <a class="course rv" href="https://mishellspark.gumroad.com" target="_blank" rel="noopener"><h3>Online kurs detailinga</h3><p>Poliranje, keramika i dubinsko pranje. Doživotan pristup.</p><div class="cp"><s>100€</s>74€</div></a>
+            <a class="course rv" href="https://mishellspark.gumroad.com" target="_blank" rel="noopener"><h3>Dubinsko pranje i poliranje farova</h3><p>Profi tehnike korak po korak, video lekcije.</p><div class="cp"><s>70€</s>44€</div></a>
+            <a class="course rv" href="https://wa.me/381637447795?text=Zdravo%20Mi%C5%A1ele%2C%20zanima%20me%20VIP%20obuka%201%20na%201." target="_blank" rel="noopener"><h3>Obuka 1 na 1 u studiju (VIP)</h3><p>8 sati praktičnog rada na mojim mašinama i materijalu.</p><div class="cp">450€<small> / 8h</small></div></a>
+          </div>
+          <div class="vids">
+            <div class="yt rv" data-yt="p_xkLwMPYxc" role="button" tabindex="0" aria-label="Pusti video: Online kurs detailinga"><img src="https://i.ytimg.com/vi/p_xkLwMPYxc/hqdefault.jpg" alt="" loading="lazy" /><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span></div></div>
+            <div class="yt rv" data-yt="of2_4Jb9gWo" role="button" tabindex="0" aria-label="Pusti video: Kurs dubinsko pranje i farovi"><img src="https://i.ytimg.com/vi/of2_4Jb9gWo/hqdefault.jpg" alt="" loading="lazy" /><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span></div></div>
+          </div>
+          <p class="vat">Cene kurseva su bez PDV-a, PDV se obračunava pri plaćanju. Akademija se plaća preko platforme Skool.</p>
+          <div class="graph rv" id="graph">
+            <div class="t">MIŠEL DETAILING AKADEMIJA</div>
+            <div class="big"><div class="cnt" id="cntMain"></div><div class="cntl">KURSEVA</div></div>
+            <div class="rows" id="rows"></div>
+            <div class="free">
+              <div><div class="ft"><span>7 DANA</span>BESPLATNO</div><div class="fp">Zajednica + svi kursevi · posle $14 mesečno</div></div>
+              <a class="btn" href="https://www.skool.com/misel-detailing-akademija-8635/about" target="_blank" rel="noopener">Upiši se</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O MENI -->
+    <section class="sec alt card-in" id="o-meni">
+      <div class="wrap about">
+        <div class="photo rv"><img src="assets/img/misel.webp" alt="Mišel polira šoferku u studiju Mišel Pro Detailing" loading="lazy" />
+          <div class="sig"><img src="assets/img/logo.webp" alt="" /><div><b>MIŠEL</b><small>Osnivač · detailer · instruktor</small></div></div></div>
+        <div>
+          <span class="kicker rv">O meni</span>
+          <h2 class="h2 display split">Razlika je <em>u detaljima</em></h2>
+          <blockquote class="rv">Zovem se Mišel. Počeo sam pre više od 7 godina jer me je fascinirao proces: da od zapuštenog, izbledelog laka napravim ogledalo. Danas vodim studio, snimam za YouTube i TikTok i držim kurseve. Kad ti radim auto, radiš sa nekim ko od ovog posla živi, predaje ga i stvara.</blockquote>
+          <div class="vals">
+            <div class="val rv"><b>01</b><h3>Premium proizvodi</h3><p>Profesionalni proizvodi vodećih svetskih brendova, za rezultat koji traje.</p></div>
+            <div class="val rv"><b>02</b><h3>Pažnja do detalja</h3><p>Svaki auto tretiram kao da je moj. Bez preskakanja koraka.</p></div>
+            <div class="val rv"><b>03</b><h3>Iskustvo i znanje</h3><p>7+ godina, 500+ automobila i kursevi za druge detailere.</p></div>
+            <div class="val rv"><b>04</b><h3>Transparentnost</h3><p>Jasne cene, realni rokovi i pre/posle dokumentacija.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KAKO RADIMO -->
+    <section class="sec hexbg card-in" id="proces">
+      <div class="wrap">
+        <span class="kicker rv">Kako radimo</span>
+        <h2 class="h2 display split">Od poziva do <em>sjaja</em></h2>
+        <div class="steps" id="steps">
+          <div class="rail"><i></i></div>
+          <div class="step"><span class="dot">01</span><h3>Javiš se</h3><p>Pozoveš, pišeš na WhatsApp ili popuniš formu ispod. Dogovaramo termin i biramo pravi paket.</p></div>
+          <div class="step"><span class="dot">02</span><h3>Pregled vozila</h3><p>Detaljno pregledamo lak i enterijer, pravimo plan rada i kažemo ti tačnu cenu pre početka.</p></div>
+          <div class="step"><span class="dot">03</span><h3>Tretman</h3><p>Puna pažnja tvom autu. Bez žurbe i bez preskakanja, od prvog do poslednjeg koraka.</p></div>
+          <div class="step"><span class="dot">04</span><h3>Predaja</h3><p>Pre/posle dokumentacija, saveti za održavanje i osmeh kad vidiš svoj auto.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENZIJE -->
+    <section class="sec alt card-in" id="recenzije">
+      <div class="wrap">
+        <span class="kicker rv">Recenzije</span>
+        <h2 class="h2 display split">Šta kažu <em>klijenti</em></h2>
+        <div class="revs">
+          <article class="rev rv"><div class="st">★★★★★</div><p>Saradnja vrhunska sa Mišelom. Precizan, tačan, odradio posao do detalja. Od prljavog auta napravio kao nov, uz savete kako da ga održavam. Veliki respekt i preporuke za majstora!</p>
+            <div class="who"><span class="av">L</span><div><b>Lazar Čolović</b><small>Google recenzija</small></div></div></article>
+          <article class="rev rv"><div class="st">★★★★★</div><p>Svaka preporuka, organizacija 10/10, a rad 100/10. Ispoštovan dogovor maksimalno, a keramiku neću ni da komentarišem: kola vraćena u fabričko stanje. Naravno da ću se ponovo vratiti.</p>
+            <div class="who"><span class="av">M</span><div><b>Mihajlo Petković</b><small>Google recenzija</small></div></div></article>
+        </div>
+        <div class="rev-cta rv">
+          <a class="btn btn-ghost" href="https://www.google.com/search?q=Mi%C5%A1el+Pro+Detailing+Ni%C5%A1" target="_blank" rel="noopener">Sve recenzije na Google-u →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZAKAŽI -->
+    <section class="sec hexbg card-in" id="zakazi">
+      <div class="wrap">
+        <span class="kicker rv">Online zakazivanje</span>
+        <h2 class="h2 display split">Zakaži <em>termin</em></h2>
+        <p class="lead rv">Popuni formu i pošalji je jednim klikom na WhatsApp ili na mejl. Javljamo se u roku od 24 sata.</p>
+        <div class="book" id="kontakt">
+          <form class="bk rv" id="bk" novalidate>
+            <div class="fg">
+              <div class="fld"><label for="f-ime">Ime i prezime <i>*</i></label><input id="f-ime" name="ime" autocomplete="name" required /></div>
+              <div class="fld"><label for="f-tel">Telefon <i>*</i></label><input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="06x xxx xxxx" required /></div>
+              <div class="fld"><label for="f-auto">Auto (marka i model) <i>*</i></label><input id="f-auto" name="auto" placeholder="npr. BMW X5" required /></div>
+              <div class="fld"><label for="f-usluga">Usluga <i>*</i></label>
+                <select id="f-usluga" name="usluga" required>
+                  <option value="">Izaberi…</option>
+                  <optgroup label="Paketi"><option>GREY paket</option><option>BLACK paket</option><option>BLACK + paket</option></optgroup>
+                  <optgroup label="Usluge"><option>Premium pranje</option><option>Dubinsko pranje</option><option>Poliranje šoferke</option><option>Poliranje farova</option><option>PPF zaštita farova</option><option>Zaštita kožnog enterijera</option></optgroup>
+                  <optgroup label="Edukacija"><option>Obuka 1 na 1 (VIP)</option></optgroup>
+                  <option>Nisam siguran/na, treba mi savet</option>
+                </select></div>
+              <div class="fld"><label for="f-dan">Željeni datum</label><input id="f-dan" name="datum" type="date" /></div>
+              <div class="fld"><label for="f-email">Email (opciono)</label><input id="f-email" name="email" type="email" autocomplete="email" /></div>
+              <div class="fld full"><label for="f-nap">Napomena</label><textarea id="f-nap" name="napomena" placeholder="Stanje auta, šta te muči, pitanja…"></textarea></div>
+              <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="send">
+              <button class="btn btn-wa" type="button" id="sendWa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.5.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Pošalji na WhatsApp</button>
+              <button class="btn btn-red" type="submit" id="sendMail"><span class="shine"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Pošalji na mejl</button>
+            </div>
+            <p class="fmsg" id="fmsg" role="status" aria-live="polite"></p>
+          </form>
+          <div class="contact">
+            <a class="ci rv" href="tel:+381637826077"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Poziv</small><b>063 78 26 077</b></span></a>
+            <a class="ci rv" href="https://wa.me/381637447795" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span><span><small>WhatsApp</small><b>063 744 77 95</b></span></a>
+            <a class="ci rv" href="mailto:mishell018@gmail.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><b>mishell018@gmail.com</b></span></a>
+            <a class="ci rv" href="https://maps.google.com/?q=Kajmak%C4%8Dalanska+14a,+Ni%C5%A1" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Adresa</small><b>Kajmakčalanska 14a, Niš</b></span></a>
+            <div class="hours rv">
+              <div class="now" id="now"><i></i><span>Radno vreme</span></div>
+              <div class="row"><span>Ponedeljak – Subota</span><span>09:00 – 17:00</span></div>
+              <div class="row off"><span>Nedelja</span><span>Ne radimo</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="map rv"><iframe title="Mapa: Kajmakčalanska 14a, Niš" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kajmak%C4%8Dalanska+14a,+Ni%C5%A1&output=embed"></iframe></div>
+      </div>
+    </section>
+
+    <!-- FINALNI POZIV -->
+    <section class="sec final">
+      <div class="wrap">
+        <div class="final-card rv">
+          <div class="bgimg"><img src="assets/img/poliranje-keramika-12.webp" alt="" loading="lazy" /></div>
+          <span class="kicker">Spremni?</span>
+          <h2 class="h2 display split">Vratimo sjaj <em>tvom autu</em></h2>
+          <p>Javi se danas, dogovaramo termin koji ti odgovara.</p>
+          <div class="ctas">
+            <a class="btn btn-red mag" href="#zakazi"><span class="shine"></span>Zakaži termin</a>
+            <a class="btn btn-wa mag" href="https://wa.me/381637447795" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <a class="brand" href="#top"><img src="assets/img/logo.webp" alt="" width="46" height="46" /><span><b>MIŠEL PRO DETAILING</b><small>NIŠ · AUTO DETAILING</small></span></a>
+        <p style="margin-top:14px">Poliranje · Keramička zaštita · Dubinsko pranje · PPF · Edukacija</p>
+        <div class="soc">
+          <a href="https://instagram.com/misel_pro_detailing" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.tiktok.com/@misel_pro_detailing" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+          <a href="https://wa.me/381637447795" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Studio</h4><p>Kajmakčalanska 14a, Niš<br />Pon – Sub: 09:00 – 17:00<br />Nedelja: ne radimo</p></div>
+      <div><h4>Kontakt</h4><p><a href="tel:+381637826077">063 78 26 077</a><br /><a href="https://wa.me/381637447795">WhatsApp: 063 744 77 95</a><br /><a href="mailto:mishell018@gmail.com">mishell018@gmail.com</a></p></div>
+      <div class="copy">© <span id="yr">2026</span> Mišel Pro Detailing · Niš</div>
     </div>
-    <p class="note">Mišel Pro Detailing · Niš — Poliranje • Keramička zaštita • Dubinsko pranje • PPF</p>
+  </footer>
+
+  <nav class="mbar" id="mbar" aria-label="Brze akcije">
+    <a class="c" href="tel:+381637826077"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Pozovi</a>
+    <a class="w" href="https://wa.me/381637447795" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>WhatsApp</a>
+    <a class="z" href="#zakazi">Zakaži</a>
+  </nav>
+
+  <div id="lb" role="dialog" aria-modal="true" aria-label="Galerija">
+    <button class="x" aria-label="Zatvori">✕</button><button class="pv" aria-label="Prethodna">‹</button><button class="nx" aria-label="Sledeća">›</button>
+    <img alt="" />
   </div>
-</section>
 
-<div class="lb" id="lb"><span class="x">✕</span><img alt="Uvećana fotka"></div>
-
-<div class="scroller" id="scroller"></div>
-
-<script>
-  const scenes=[...document.querySelectorAll('.scene')];
-  const N=scenes.length;
-  const scroller=document.getElementById('scroller');
-  function setH(){scroller.style.height=Math.round(N*70)+'vh';}
-  setH();
-
-  const carwrap=document.getElementById('carwrap'),hl=document.getElementById('hl'),gloss=document.getElementById('gloss');
-  const mWarm=document.getElementById('mWarm'),mCool=document.getElementById('mCool');
-  const prog=document.getElementById('prog'),plab=document.getElementById('plab');
-
-  /* ===== APPROVED CAR MOTION (do not change) ===== */
-  const CAM=[{p:0.06,sc:1.0,tx:0,ty:0},{p:0.21,sc:1.12,tx:-3,ty:0},{p:0.40,sc:1.7,tx:20,ty:7},{p:0.58,sc:1.42,tx:-15,ty:3},{p:0.78,sc:0.86,tx:0,ty:8},{p:0.94,sc:1.0,tx:0,ty:0}];
-  const sm=t=>t*t*(3-2*t);
-  const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
-  function camAt(p){
-    if(p<=CAM[0].p)return CAM[0];
-    if(p>=CAM[CAM.length-1].p)return CAM[CAM.length-1];
-    for(let i=0;i<CAM.length-1;i++){
-      const a=CAM[i],b=CAM[i+1];
-      if(p>=a.p&&p<=b.p){const t=sm((p-a.p)/(b.p-a.p));
-        return{sc:a.sc+(b.sc-a.sc)*t,tx:a.tx+(b.tx-a.tx)*t,ty:a.ty+(b.ty-a.ty)*t};}
-    }
-    return CAM[CAM.length-1];
-  }
-
-  let tp=0,cp=0;
-  function maxScroll(){return (document.documentElement.scrollHeight-innerHeight)||1;}
-  addEventListener('scroll',()=>{tp=cl(scrollY/maxScroll(),0,1);},{passive:true});
-  addEventListener('resize',setH);
-
-  function frame(){
-    cp+=(tp-cp)*0.075;
-    const p=cp;
-    const c=camAt(p);
-    carwrap.style.transform=`translate(-50%,-50%) translate(${c.tx}%,${c.ty}%) scale(${c.sc})`;
-    mWarm.style.opacity=(cl((p-0.30)/0.15,0,1)*(1-cl((p-0.55)/0.2,0,1))).toFixed(3);
-    mCool.style.opacity=(cl((p-0.55)/0.15,0,1)*(1-cl((p-0.85)/0.1,0,1))).toFixed(3);
-    hl.style.opacity=(cl((p-0.34)/0.1,0,1)*(1-cl((p-0.7)/0.15,0,1))*0.9).toFixed(3);
-    gloss.style.opacity=(0.5*Math.max(0,Math.sin(p*Math.PI))).toFixed(3);
-    gloss.style.transform=`skewX(-18deg) translateX(${(p*260)}%)`;
-    prog.style.width=(p*100)+'%';
-    let activeName='Skroluj';
-    for(const sc of scenes){
-      const i=+sc.dataset.i;
-      const s=i/N,e=(i+1)/N,loc=cl((p-s)/(e-s),0,1);
-      let fin=sm(cl(loc/0.26,0,1));
-      let fout=1-sm(cl((loc-0.74)/0.26,0,1));
-      if(i===0)fin=1;        // naslov odmah vidljiv na vrhu
-      if(i===N-1)fout=1;     // poslednja scena ostaje do kraja
-      const vis=fin*fout;
-      sc.style.opacity=vis.toFixed(3);
-      const ty=((1-fin)*26)-((1-fout)*26);
-      sc.style.transform=`translateY(${ty.toFixed(1)}px)`;
-      const on=vis>0.5;
-      sc.classList.toggle('active',on);
-      if(on)activeName=sc.dataset.name;
-    }
-    plab.textContent=activeName;
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-
-  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-  function setMenu(open){menu.classList.toggle('open',open);burger.classList.toggle('open',open);}
-  burger.addEventListener('click',e=>{e.stopPropagation();setMenu(!menu.classList.contains('open'));});
-  document.addEventListener('click',e=>{if(menu.classList.contains('open')&&!menu.contains(e.target)&&e.target!==burger)setMenu(false);});
-
-  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',e=>{
-    e.preventDefault();const i=+b.dataset.goto;
-    scrollTo({top:((i+0.5)/N)*maxScroll(),behavior:'smooth'});
-    setMenu(false);
-  }));
-
-  // gallery filter
-  const gf=document.getElementById('gfilters'),cells=[...document.querySelectorAll('#gg .c')],gnote=document.getElementById('gnote');
-  if(gf){gf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-    gf.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
-    const f=b.dataset.f;let shown=0;
-    cells.forEach(c=>{const ok=(f==='all'||c.dataset.cat===f);c.style.display=ok?'':'none';if(ok)shown++;});
-    gnote.textContent=shown?'':'Uskoro — fotke za ovu kategoriju.';
-  });}
-  // lightbox — klik na sliku je uvećava
-  const lb=document.getElementById('lb'),lbimg=lb.querySelector('img');
-  document.querySelectorAll('#gg img').forEach(im=>im.addEventListener('click',()=>{lbimg.src=im.src;lb.classList.add('on');}));
-  lb.addEventListener('click',()=>lb.classList.remove('on'));
-
-  const wa=document.getElementById('waBtn');
-  function build(){const g=id=>document.getElementById(id).value.trim();
-    const body=`Zdravo! Želim da zakažem termin.\n\nIme: ${g('f-ime')||'-'}\nTelefon: ${g('f-tel')||'-'}\nAuto: ${g('f-auto')||'-'}\nPaket: ${document.getElementById('f-usluga').value||'-'}\nNapomena: ${g('f-nap')||'-'}`;
-    wa.href=`https://wa.me/381637447795?text=${encodeURIComponent(body)}`;}
-  ['f-ime','f-tel','f-auto','f-usluga','f-nap'].forEach(id=>document.getElementById(id).addEventListener('input',build));build();
-
-  const bf=document.getElementById('bookForm'),bm=document.getElementById('bookMsg');
-  if(bf){bf.addEventListener('submit',async e=>{e.preventDefault();bm.textContent='Šaljem...';
-    const v=id=>document.getElementById(id).value.trim();
-    const data={access_key:'81df02af-3c06-4bf4-882f-83ed92a8812e',subject:'Novo zakazivanje — Mišel Pro Detailing',
-      Ime:v('f-ime'),Telefon:v('f-tel'),Auto:v('f-auto'),Paket:document.getElementById('f-usluga').value,Napomena:v('f-nap')};
-    try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
-      const j=await r.json();
-      if(j.success){bm.textContent='✅ Zahtev poslat! Javljamo se u roku od 24h.';bf.reset();}
-      else bm.textContent='Greška pri slanju — probajte preko WhatsApp-a.';
-    }catch(_){bm.textContent='Nema konekcije — probajte preko WhatsApp-a.';}
-  });}
-</script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
