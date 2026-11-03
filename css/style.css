@@ -232,6 +232,21 @@ html.no-pre #pre { display: none; }
   padding: 7px 12px; border-radius: 999px; box-shadow: 0 0 24px rgba(225,6,0,0.6); }
 .pk .price { margin-top: 18px; font-family: "Anton"; font-size: clamp(38px, 4.4vw, 50px); line-height: 1; }
 .pk .price small { display: block; font-family: "Mont"; font-size: 13px; color: var(--muted); font-weight: 700; letter-spacing: 1.5px; margin-top: 8px; }
+/* paketi: prekidač limuzina / džip i dve cene po kartici */
+.pk-sw { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; margin-top: 26px; padding: 5px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
+.pk-sw button { position: relative; z-index: 1; appearance: none; border: 0; background: none; color: var(--muted); font: 800 13px/1 "Mont", sans-serif; letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px; border-radius: 999px; cursor: pointer; transition: color .3s; white-space: nowrap; }
+.pk-sw button.on { color: #fff; }
+.pk-sw i { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); border-radius: 999px; background: var(--red); box-shadow: 0 8px 24px rgba(225,6,0,0.35); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.pk-sw.suv i { transform: translateX(100%); }
+.pk .pp { margin-top: 20px; display: grid; gap: 10px; }
+.pk .pp .row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.pk .pp .row span { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+.pk .pp .row b { font-family: "Anton"; font-weight: 400; font-size: clamp(32px, 3.4vw, 42px); line-height: 1; white-space: nowrap; }
+.pk .pp .row.one b { font-size: clamp(40px, 4.4vw, 54px); }
+.pk .pp small { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: 1.5px; }
+.pk .pp b.flip { animation: ppflip .45s cubic-bezier(.2,.8,.2,1); }
+@keyframes ppflip { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pk .pp b.flip { animation: none; } .pk-sw i { transition: none; } }
 .pk ul { list-style: none; margin: 24px 0 26px; display: grid; gap: 12px; flex: 1; align-content: start; }
 .pk li { display: flex; gap: 12px; align-items: flex-start; font-weight: 600; font-size: 15.5px; }
 .pk li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%; background: var(--red) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/14px no-repeat; }
