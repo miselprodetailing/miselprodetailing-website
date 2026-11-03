@@ -47,7 +47,7 @@
     if (id.length < 2) return;
     e.preventDefault(); closeMenu();
     const pick = a.dataset.pick;
-    if (pick) { const s = $("#f-usluga"); [...s.options].forEach((o) => { if (o.text === pick) s.value = o.text; }); }
+    if (pick) { const s = $("#f-usluga"); [...s.options].forEach((o) => { if (o.text === pick) s.value = o.text; }); s.dispatchEvent(new Event("change")); }
     goTo(id === "#top" ? document.body : id);
   }));
 
@@ -132,10 +132,32 @@
   };
   /* preselect service from /?usluga=... (links from service pages) */
   try { const u = new URLSearchParams(location.search).get("usluga"); if (u) [...$("#f-usluga").options].forEach((o) => { if (o.text === u) $("#f-usluga").value = o.text; }); } catch (e) {}
+  /* tip vozila + trajanje keramike -> cena sa sajta (čita se iz kartica, pa se cene menjaju samo na jednom mestu) */
+  const KER = ["GREY paket", "BLACK paket"];
+  const showKer = () => { $("#fld-ker").hidden = !KER.includes(val("#f-usluga")); };
+  $("#f-usluga").addEventListener("change", showKer);
+  showKer();
+  const priceTxt = () => {
+    const u = val("#f-usluga"), suv = val("#f-tip") !== "Limuzina";
+    const pk = $(`.pk a[data-pick="${u}"]`);
+    if (pk) {
+      const bs = pk.closest(".pk").querySelectorAll(".pp b");
+      const b = bs.length > 1 && val("#f-ker") === "3 godine" ? bs[1] : bs[0];
+      return b ? b.dataset[suv ? "suv" : "lim"] + " RSD" : "";
+    }
+    const sv = $(`.svc a[data-pick="${u}"]`);
+    return sv && !suv ? sv.closest(".pr").querySelector("b").firstChild.textContent.trim() + " RSD" : "";
+  };
+  const uslugaTxt = () => {
+    let t = `${val("#f-usluga")} · ${val("#f-tip")}`;
+    if (!$("#fld-ker").hidden) t += ` · keramika ${val("#f-ker")}`;
+    return t;
+  };
   const dateTxt = () => { const d = val("#f-dan"); if (!d) return ""; const [y, m, dd] = d.split("-"); return `${dd}.${m}.${y}.`; };
   $("#sendWa").addEventListener("click", () => {
     if (!check()) return;
-    const lines = ["Zdravo Mišele, želim da zakažem termin.", "", `Ime: ${val("#f-ime")}`, `Telefon: ${val("#f-tel")}`, `Auto: ${val("#f-auto")}`, `Usluga: ${val("#f-usluga")}`];
+    const lines = ["Zdravo Mišele, želim da zakažem termin.", "", `Ime: ${val("#f-ime")}`, `Telefon: ${val("#f-tel")}`, `Auto: ${val("#f-auto")}`, `Usluga: ${uslugaTxt()}`];
+    if (priceTxt()) lines.push(`Cena sa sajta: ${priceTxt()}`);
     if (dateTxt()) lines.push(`Željeni datum: ${dateTxt()}`);
     if (val("#f-nap")) lines.push(`Napomena: ${val("#f-nap")}`);
     window.open("https://wa.me/381637447795?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
@@ -149,13 +171,13 @@
     const key = (window.SITE_CONFIG || {}).web3formsKey;
     const btn = $("#sendMail"); btn.disabled = true; msg.className = "fmsg"; msg.textContent = "Šaljem…";
     const data = { access_key: key, subject: `Novi zahtev za termin: ${val("#f-usluga")} (${val("#f-auto")})`, from_name: "miselprodetailing.com",
-      Ime: val("#f-ime"), Telefon: val("#f-tel"), Auto: val("#f-auto"), Usluga: val("#f-usluga"), "Željeni datum": dateTxt() || "nije naveden",
+      Ime: val("#f-ime"), Telefon: val("#f-tel"), Auto: val("#f-auto"), Usluga: uslugaTxt(), "Cena sa sajta": priceTxt() || "po dogovoru", "Željeni datum": dateTxt() || "nije naveden",
       Email: val("#f-email") || "nije naveden", Napomena: val("#f-nap") || "-" };
     if (val("#f-email")) data.replyto = val("#f-email");
     try {
       const r = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
       const j = await r.json();
-      if (j.success) { msg.className = "fmsg ok"; msg.textContent = "Zahtev je poslat! Javljamo se u roku od 24 sata."; form.reset(); if (window.gtag) gtag("event", "zakazivanje", { kanal: "email" }); }
+      if (j.success) { msg.className = "fmsg ok"; msg.textContent = "Zahtev je poslat! Javljamo se u roku od 24 sata."; form.reset(); showKer(); if (window.gtag) gtag("event", "zakazivanje", { kanal: "email" }); }
       else throw new Error();
     } catch (_) { msg.className = "fmsg bad"; msg.textContent = "Slanje nije uspelo. Probaj preko WhatsApp dugmeta ili nas pozovi."; }
     btn.disabled = false;

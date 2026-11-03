@@ -200,6 +200,7 @@
               var car = b.dataset.car;
               sw.querySelectorAll("button").forEach(function (x) { var on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
               sw.classList.toggle("suv", car === "suv");
+              var tip = document.getElementById("f-tip"); if (tip) { tip.value = car === "suv" ? "Džip / SUV" : "Limuzina"; tip.dispatchEvent(new Event("change")); }
               document.querySelectorAll("#paketi .pp b").forEach(function (el) {
                 el.classList.remove("flip"); void el.offsetWidth; el.textContent = el.dataset[car]; el.classList.add("flip");
               });
@@ -298,6 +299,7 @@
       <div class="wrap">
         <span class="kicker rv">Recenzije</span>
         <h2 class="h2 display split">Šta kažu <em>klijenti</em></h2>
+        <a class="rev-badge rv" href="https://www.google.com/search?q=Mi%C5%A1el+Pro+Detailing+Ni%C5%A1" target="_blank" rel="noopener"><b>25</b><span>recenzija na Google-u</span><i>Pročitaj sve →</i></a>
         <div class="revs">
           <article class="rev rv"><div class="st">★★★★★</div><p>Saradnja vrhunska sa Mišelom. Precizan, tačan, odradio posao do detalja. Od prljavog auta napravio kao nov, uz savete kako da ga održavam. Veliki respekt i preporuke za majstora!</p>
             <div class="who"><span class="av">L</span><div><b>Lazar Čolović</b><small>Google recenzija</small></div></div></article>
@@ -305,7 +307,7 @@
             <div class="who"><span class="av">M</span><div><b>Mihajlo Petković</b><small>Google recenzija</small></div></div></article>
         </div>
         <div class="rev-cta rv">
-          <a class="btn btn-ghost" href="https://www.google.com/search?q=Mi%C5%A1el+Pro+Detailing+Ni%C5%A1" target="_blank" rel="noopener">Sve recenzije na Google-u →</a>
+          <a class="btn btn-ghost" href="https://www.google.com/search?q=Mi%C5%A1el+Pro+Detailing+Ni%C5%A1" target="_blank" rel="noopener">Svih 25 recenzija na Google-u →</a>
         </div>
       </div>
     </section>
@@ -339,6 +341,10 @@
                   <optgroup label="Edukacija"><option>Obuka 1 na 1 (VIP)</option></optgroup>
                   <option>Nisam siguran/na, treba mi savet</option>
                 </select></div>
+              <div class="fld"><label for="f-tip">Tip vozila</label>
+                <select id="f-tip" name="tip"><option>Limuzina</option><option>Džip / SUV</option></select></div>
+              <div class="fld" id="fld-ker" hidden><label for="f-ker">Keramika</label>
+                <select id="f-ker" name="keramika"><option>1 godina</option><option>3 godine</option></select></div>
               <div class="fld"><label for="f-dan">Željeni datum</label><input id="f-dan" name="datum" type="date" /></div>
               <div class="fld"><label for="f-email">Email (opciono)</label><input id="f-email" name="email" type="email" autocomplete="email" /></div>
               <div class="fld full"><label for="f-nap">Napomena</label><textarea id="f-nap" name="napomena" placeholder="Stanje auta, šta te muči, pitanja…"></textarea></div>
