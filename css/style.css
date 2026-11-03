@@ -372,7 +372,9 @@ html.no-pre #pre { display: none; }
 .rev-badge { display: inline-flex; align-items: center; gap: 14px; margin-top: 26px; padding: 12px 22px 12px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); transition: border-color .3s; }
 .rev-badge:hover { border-color: rgba(225,6,0,0.6); }
 .rev-badge b { font-family: "Anton"; font-weight: 400; font-size: 30px; line-height: 1; background: var(--red); padding: 8px 14px 6px; border-radius: 999px; }
+.rev-badge em { font-style: normal; color: #ffc93c; letter-spacing: 2px; font-size: 16px; }
 .rev-badge span { font-weight: 800; font-size: 15px; }
+@media (max-width: 400px) { .rev-badge em { display: none; } }
 .rev-badge i { font-style: normal; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--red2); }
 @media (max-width: 480px) { .rev-badge i { display: none; } }
 .rev-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
