@@ -137,16 +137,20 @@
   const showKer = () => { $("#fld-ker").hidden = !KER.includes(val("#f-usluga")); };
   $("#f-usluga").addEventListener("change", showKer);
   showKer();
+  /* paketi i dubinsko imaju precrtanu (redovnu) i cenu sa popustom za zakazivanje preko sajta */
   const priceTxt = () => {
-    const u = val("#f-usluga"), suv = val("#f-tip") !== "Limuzina";
+    const u = val("#f-usluga"), k = val("#f-tip") !== "Limuzina" ? "suv" : "lim";
     const pk = $(`.pk a[data-pick="${u}"]`);
     if (pk) {
-      const bs = pk.closest(".pk").querySelectorAll(".pp b");
-      const b = bs.length > 1 && val("#f-ker") === "3 godine" ? bs[1] : bs[0];
-      return b ? b.dataset[suv ? "suv" : "lim"] + " RSD" : "";
+      const rows = pk.closest(".pk").querySelectorAll(".pp .row");
+      const r = rows.length > 1 && val("#f-ker") === "3 godine" ? rows[1] : rows[0];
+      return `${r.querySelector("b").dataset[k]} RSD (−10% preko sajta, redovna ${r.querySelector("s").dataset[k]} RSD)`;
     }
     const sv = $(`.svc a[data-pick="${u}"]`);
-    return sv && !suv ? sv.closest(".pr").querySelector("b").firstChild.textContent.trim() + " RSD" : "";
+    if (!sv) return "";
+    const b = sv.closest(".pr").querySelector("b"), o = sv.closest(".pr").querySelector("s");
+    if (b.dataset.lim) return `${b.dataset[k]} RSD (−10% preko sajta, redovna ${o.dataset[k]} RSD)`;
+    return k === "lim" ? b.firstChild.textContent.trim() + " RSD" : "";
   };
   const uslugaTxt = () => {
     let t = `${val("#f-usluga")} · ${val("#f-tip")}`;

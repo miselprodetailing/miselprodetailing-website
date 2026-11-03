@@ -209,7 +209,7 @@ html.no-pre #pre { display: none; }
 .svc .pr { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
 .svc .pr b { font-family: "Anton"; font-weight: 400; font-size: 30px; }
 .svc .pr b small { font-family: "Mont"; font-size: 13px; color: var(--muted); font-weight: 700; margin-left: 4px; letter-spacing: 1px; }
-.svc .pr a { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--red2); display: inline-flex; gap: 6px; align-items: center; }
+.svc .pr a { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--red2); display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
 .svc .pr a:hover { color: #fff; }
 
 /* ---------- packages */
@@ -244,7 +244,15 @@ html.no-pre #pre { display: none; }
 .pk .pp .row b { font-family: "Anton"; font-weight: 400; font-size: clamp(32px, 3.4vw, 42px); line-height: 1; white-space: nowrap; }
 .pk .pp .row.one b { font-size: clamp(40px, 4.4vw, 54px); }
 .pk .pp small { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: 1.5px; }
-.pk .pp b.flip { animation: ppflip .45s cubic-bezier(.2,.8,.2,1); }
+.pk .pp .row s { margin-left: auto; color: var(--muted); font-size: 15px; font-weight: 700; text-decoration-color: var(--red); text-decoration-thickness: 2px; white-space: nowrap; }
+.pk-deal { display: inline-flex; align-items: center; gap: 12px; margin: 22px 14px 0 0; vertical-align: middle; }
+.pk-deal b { font-family: "Anton"; font-weight: 400; font-size: 26px; line-height: 1; background: var(--red); padding: 9px 14px 7px; border-radius: 12px; transform: rotate(-4deg); box-shadow: 0 10px 26px rgba(225,6,0,0.4); }
+.pk-deal span { font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
+.svc .pr .dp { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.svc .pr .dp s { color: var(--muted); font-weight: 700; font-size: 15px; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.svc .pr .dp em { flex-basis: 100%; font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red2); }
+.deal-txt { color: #fff; }
+.pk .pp s.flip, .pk .pp b.flip { animation: ppflip .45s cubic-bezier(.2,.8,.2,1); }
 @keyframes ppflip { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .pk .pp b.flip { animation: none; } .pk-sw i { transition: none; } }
 .pk ul { list-style: none; margin: 24px 0 26px; display: grid; gap: 12px; flex: 1; align-content: start; }
