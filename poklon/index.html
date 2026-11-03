@@ -75,7 +75,15 @@
             <div class="fld"><label for="g-za">Ime osobe kojoj poklanjaš <i>*</i></label><input id="g-za" maxlength="30" placeholder="npr. Marko" required /></div>
             <div class="fld"><label for="g-od">Od koga (opciono)</label><input id="g-od" maxlength="30" placeholder="npr. Ana" /></div>
             <div class="fld full"><label for="g-pos">Kratka posveta na vaučeru (opciono)</label><input id="g-pos" maxlength="60" placeholder="npr. Srećan rođendan! 🎉" /></div>
-            <button class="btn btn-wa" type="submit" id="gsend"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>Naruči vaučer na WhatsApp</button>
+            <div class="fld"><label for="g-tel">Tvoj telefon <i>*</i></label><input id="g-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06x xxx xxxx" /></div>
+            <div class="fld"><label for="g-mail">Tvoj mejl (opciono)</label><input id="g-mail" type="email" autocomplete="email" placeholder="za potvrdu narudžbine" /></div>
+            <p class="gsend-t">Pošalji narudžbinu kako ti odgovara:</p>
+            <div class="gbtns">
+              <button class="btn btn-wa" type="button" data-send="wa"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>WhatsApp</button>
+              <button class="btn btn-viber" type="button" data-send="viber"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M11.4 2C9.3 2 4.7 2.3 3.2 5.1c-.9 1.6-1 3.7-1 6.2 0 2.6.2 4.5 1.6 5.9.6.6 1.5 1 2.4 1.3v2.9c0 .4.5.6.8.3l2.6-2.6c.6 0 1.3.1 1.9.1 2.1 0 6.7-.3 8.2-3.1.9-1.6 1-3.7 1-6.2 0-2.6-.2-4.5-1.6-5.9C17.6 2.4 14.1 2 11.4 2zm4.9 12.6c-.3.6-1 1.2-1.6 1.1-1.7-.4-3.4-1.3-4.8-2.6-1.4-1.3-2.4-2.9-2.9-4.6-.2-.6.4-1.3 1-1.6.4-.2.8-.1 1 .2l1 1.4c.2.3.2.7-.1 1l-.4.4c.3.9 1.4 2.1 2.4 2.5l.4-.4c.3-.3.7-.3 1-.1l1.4 1c.4.2.5.6.4 1z"/></svg>Viber</button>
+              <button class="btn btn-red" type="button" data-send="mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Mejl</button>
+            </div>
+            <p class="gcall">Ili pozovi: <a href="tel:+381637826077">063 78 26 077</a></p>
             <p class="fmsg" id="gmsg" aria-live="polite"></p>
           </form>
         </div>
@@ -89,10 +97,10 @@
         <span class="kicker rv">Jednostavno</span>
         <h2 class="h2 display rv">Kako <em>funkcioniše</em></h2>
         <div class="gsteps">
-          <div class="sstep rv"><b>01</b><h3>Izaberi i pošalji</h3><p>Izabereš uslugu, upišeš ime i jednim klikom pošalješ poruku na WhatsApp.</p></div>
+          <div class="sstep rv"><b>01</b><h3>Izaberi i pošalji</h3><p>Izabereš uslugu, upišeš ime i pošalješ narudžbinu preko WhatsApp-a, Vibera ili mejla.</p></div>
           <div class="sstep rv"><b>02</b><h3>Dogovorimo plaćanje</h3><p>Javim ti se odmah. Plaćaš u studiju ili uplatom na račun.</p></div>
           <div class="sstep rv"><b>03</b><h3>Dobiješ vaučer</h3><p>Šaljem ti vaučer sa imenom i brojem, spreman za telefon ili štampu.</p></div>
-          <div class="sstep rv"><b>04</b><h3>On zakaže termin</h3><p>Osoba kojoj poklanjaš zakaže kad joj odgovara, do 31. marta 2027.</p></div>
+          <div class="sstep rv"><b>04</b><h3>Zakazivanje termina</h3><p>Osoba kojoj poklanjaš zakaže kad joj odgovara, do 31. marta 2027.</p></div>
         </div>
         <ul class="gterms rv">
           <li>Akcija traje do 31.12.2026.</li>
@@ -152,23 +160,60 @@
       $("g-za").addEventListener("input", function () { $("v-za").textContent = this.value.trim() || "Ime osobe"; this.closest(".fld").classList.remove("err"); });
       $("g-od").addEventListener("input", function () { $("v-od").textContent = this.value.trim() ? "Od: " + this.value.trim() : ""; });
       $("g-pos").addEventListener("input", function () { $("v-pos").textContent = this.value.trim(); });
-      $("gf").addEventListener("submit", function (e) {
-        e.preventDefault();
-        var za = $("g-za").value.trim(), od = $("g-od").value.trim(), pos = $("g-pos").value.trim(), o = cur(), msg = $("gmsg");
-        if (!za) { $("g-za").closest(".fld").classList.add("err"); msg.className = "fmsg bad"; msg.textContent = "Upiši ime osobe kojoj poklanjaš."; return; }
-        var lines = ["Zdravo Mišele, želim poklon vaučer (praznična akcija −20%).", "",
-          "Usluga: " + o.dataset.name + " · " + (car === "suv" ? "Džip / SUV" : "Limuzina"),
-          "Cena: " + o.dataset["n" + car] + " RSD (redovna " + o.dataset["o" + car] + " RSD)",
-          "Vaučer je za: " + za];
-        if (od) lines.push("Od: " + od);
-        if (pos) lines.push("Posveta: " + pos);
-        window.open("https://wa.me/381637447795?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
-        msg.className = "fmsg ok"; msg.textContent = "Otvoren je WhatsApp sa tvojom porukom. Samo pritisni pošalji.";
-        if (window.gtag) gtag("event", "poklon_vaucer", { usluga: o.dataset.name, vozilo: car });
+      ["g-za", "g-tel"].forEach(function (id) { $(id).addEventListener("input", function () { this.closest(".fld").classList.remove("err"); }); });
+      $("gf").addEventListener("submit", function (e) { e.preventDefault(); });
+      function say(t, ok) { var m = $("gmsg"); m.className = "fmsg " + (ok ? "ok" : "bad"); m.textContent = t; }
+      function order() {
+        var za = $("g-za").value.trim(), tel = $("g-tel").value.trim(), bad = false;
+        if (!za) { $("g-za").closest(".fld").classList.add("err"); bad = true; }
+        if (tel.replace(/\D/g, "").length < 8) { $("g-tel").closest(".fld").classList.add("err"); bad = true; }
+        if (bad) { say("Upiši ime osobe kojoj poklanjaš i svoj telefon.", false); return null; }
+        var o = cur();
+        return { za: za, tel: tel, od: $("g-od").value.trim(), pos: $("g-pos").value.trim(), mail: $("g-mail").value.trim(),
+                 usl: o.dataset.name, voz: car === "suv" ? "Džip / SUV" : "Limuzina", cena: o.dataset["n" + car], red: o.dataset["o" + car] };
+      }
+      function text(d) {
+        var l = ["Zdravo Mišele, želim poklon vaučer (praznična akcija −20%).", "",
+          "Usluga: " + d.usl + " · " + d.voz, "Cena: " + d.cena + " RSD (redovna " + d.red + " RSD)", "Vaučer je za: " + d.za];
+        if (d.od) l.push("Od: " + d.od);
+        if (d.pos) l.push("Posveta: " + d.pos);
+        l.push("Moj telefon: " + d.tel);
+        if (d.mail) l.push("Moj mejl: " + d.mail);
+        return l.join("\n");
+      }
+      function track(kanal, d) { if (window.gtag) gtag("event", "poklon_vaucer", { usluga: d.usl, vozilo: car, kanal: kanal }); }
+      document.querySelector(".gbtns").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var d = order(); if (!d) return;
+        var how = b.dataset.send;
+        if (how === "wa") {
+          window.open("https://wa.me/381637447795?text=" + encodeURIComponent(text(d)), "_blank", "noopener");
+          say("Otvoren je WhatsApp sa tvojom porukom. Samo pritisni pošalji.", true); track("whatsapp", d);
+        } else if (how === "viber") {
+          // Viber ne prima gotovu poruku sa sajta: poruka se kopira, kupac je nalepi u čet
+          var go = function () { location.href = "viber://chat?number=%2B381637447795"; };
+          var copied = navigator.clipboard ? navigator.clipboard.writeText(text(d)) : Promise.reject();
+          copied.then(function () { say("Poruka je kopirana. U Viber četu drži prst u polju za poruku, izaberi Nalepi i pošalji. Viber: 063 744 77 95", true); go(); },
+                      function () { say("Otvori Viber i pošalji poruku na 063 744 77 95 sa uslugom i imenom osobe.", true); go(); });
+          track("viber", d);
+        } else if (how === "mail") {
+          var key = (window.SITE_CONFIG || {}).web3formsKey;
+          b.disabled = true; say("Šaljem…", true);
+          var data = { access_key: key, subject: "Poklon vaučer: " + d.usl + " (za " + d.za + ")", from_name: "miselprodetailing.com",
+            Usluga: d.usl + " · " + d.voz, Cena: d.cena + " RSD (redovna " + d.red + " RSD)", "Vaučer je za": d.za, Od: d.od || "-",
+            Posveta: d.pos || "-", "Telefon kupca": d.tel, "Mejl kupca": d.mail || "nije naveden" };
+          if (d.mail) data.replyto = d.mail;
+          fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) })
+            .then(function (r) { return r.json(); })
+            .then(function (j) { if (!j.success) throw 0; say("Narudžbina je poslata! Javljam ti se na " + d.tel + " u roku od 24 sata.", true); track("mejl", d); })
+            .catch(function () { say("Slanje nije uspelo. Probaj preko WhatsApp-a ili pozovi 063 78 26 077.", false); })
+            .then(function () { b.disabled = false; });
+        }
       });
       paint();
     })();
   </script>
+  <script defer src="/assets/js/config.js"></script>
   <script defer src="/js/page.js"></script>
 </body>
 </html>

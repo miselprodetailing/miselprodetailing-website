@@ -604,3 +604,12 @@ body.sub .rv.in { opacity: 1; transform: none; }
 .promo span { text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .gift .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .nav-gift { color: var(--red2) !important; }
+.gsend-t { margin-top: 8px; font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.gbtns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 520px) { .gbtns { grid-template-columns: 1fr; } }
+.gbtns .btn { justify-content: center; gap: 10px; width: 100%; }
+.btn-viber { background: #7360f2; color: #fff; }
+.btn-viber:hover { background: #8574ff; box-shadow: 0 14px 40px rgba(115,96,242,0.45); }
+.gcall { color: var(--muted); font-size: 14px; font-weight: 600; }
+.gcall a { color: #fff; font-weight: 800; }
+@media (min-width: 640px) { .gform .gsend-t, .gform .gbtns, .gform .gcall { grid-column: 1 / -1; } }
