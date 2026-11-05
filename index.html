@@ -92,7 +92,9 @@
   <main id="top">
     <!-- PROBA: skrol pere BMW -->
     <style>
-      #hero { display: none !important; }
+      /* novi uvod samo na računaru; telefon zadržava stari početak */
+      @media (min-width: 900px) { #hero { display: none !important; } }
+      @media (max-width: 899px) { #wash { display: none !important; } }
       #wash { position: relative; height: 390vh; background: #050505; }
       #wash .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
       #wash .shot { position: absolute; inset: 0; }
@@ -122,8 +124,8 @@
 
     <section id="wash" aria-label="Pre i posle detailinga">
       <div class="stage">
-        <div class="shot" id="wDirty"><picture><source media="(max-width: 760px)" srcset="assets/img/bmw_dirty_s.webp" /><img src="assets/img/bmw_dirty.webp" alt="Prljav BMW M5 pre detailinga" /></picture></div>
-        <div class="shot" id="wClean"><picture><source media="(max-width: 760px)" srcset="assets/img/bmw_clean_s.webp" /><img src="assets/img/bmw_clean.webp" alt="Isti BMW M5 posle detailinga" /></picture></div>
+        <div class="shot" id="wDirty"><picture><source media="(max-width: 899px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><img src="assets/img/bmw_dirty.webp" alt="Prljav BMW M5 pre detailinga" /></picture></div>
+        <div class="shot" id="wClean"><picture><source media="(max-width: 899px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><img src="assets/img/bmw_clean.webp" alt="Isti BMW M5 posle detailinga" /></picture></div>
         <div id="wFoam"></div>
         <div class="wtx top">
           <div id="wt1"><span class="kicker">Poliranje · Keramička zaštita · Niš</span><h1 class="display" style="margin-top:12px">Ispod je<br /><em>fabrički sjaj</em></h1></div>
@@ -141,6 +143,7 @@
 
     <script>
       window.addEventListener("load", () => {
+        if (!matchMedia("(min-width: 900px)").matches) return;
         if (!window.gsap || !window.ScrollTrigger || matchMedia("(prefers-reduced-motion: reduce)").matches) { document.getElementById("wClean").style.clipPath = "none"; return; }
         const foam = document.getElementById("wFoam");
         for (let i = 0; i < 14; i++) { const d = document.createElement("i"); d.style.top = (i * 7 + Math.random() * 5) + "%"; d.style.marginLeft = (Math.random() * 40 - 25) + "px"; d.style.transform = `scale(${0.4 + Math.random() * 0.9})`; foam.appendChild(d); }
