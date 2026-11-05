@@ -90,6 +90,80 @@
   </div>
 
   <main id="top">
+    <!-- PROBA: skrol pere BMW -->
+    <style>
+      #hero { display: none !important; }
+      #wash { position: relative; height: 390vh; background: #050505; }
+      #wash .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+      #wash .shot { position: absolute; inset: 0; }
+      #wash .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 58%; }
+      @media (max-width: 760px) { #wash .shot img { object-position: 62% 60%; } }
+      #wClean { clip-path: inset(0 100% 0 0); }
+      #wash .stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(5,5,5,.85) 0%, rgba(5,5,5,.1) 30%, rgba(5,5,5,.05) 70%, rgba(5,5,5,.9) 100%); }
+      #wFoam { position: absolute; top: 0; bottom: 0; left: 0; width: 120px; margin-left: -60px; z-index: 2; opacity: 0; pointer-events: none;
+        background: radial-gradient(ellipse 18px 50% at 50% 50%, rgba(255,255,255,.95), rgba(225,6,0,.45) 45%, transparent 75%); filter: blur(2px); }
+      #wFoam i { position: absolute; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(255,80,60,.9); }
+      .wtx { position: absolute; left: 0; right: 0; z-index: 3; text-align: center; padding: 0 20px; }
+      .wtx.top { top: max(110px, calc(env(safe-area-inset-top, 0px) + 96px)); }
+      .wtx.bot { bottom: max(44px, calc(env(safe-area-inset-bottom, 0px) + 32px)); }
+      .wtx h1, .wtx h2 { font-size: clamp(54px, 9vw, 150px); line-height: 1.06; text-shadow: 0 10px 50px rgba(0,0,0,.7); }
+      .wtx h1 em, .wtx h2 em { font-style: normal; color: var(--red2, #ff2a1a); }
+      .wtx .kick { justify-content: center; }
+      .whint { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; font-weight: 800; font-size: 13px; letter-spacing: .3em; text-transform: uppercase; }
+      .whint i { width: 2px; height: 46px; background: linear-gradient(#e10600, transparent); animation: wdrip 1.6s ease-in-out infinite; transform-origin: top; }
+      @keyframes wdrip { 0% { transform: scaleY(0); opacity: 1 } 70% { transform: scaleY(1); opacity: 1 } 100% { opacity: 0 } }
+      .wmeter { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); display: inline-flex; align-items: baseline; gap: 14px; background: rgba(5,5,5,.6); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 10px 26px; opacity: 0; white-space: nowrap; }
+      .wmeter b { font-family: "Anton"; font-weight: 400; font-size: clamp(34px, 4vw, 52px); color: #ff2a1a; font-variant-numeric: tabular-nums; }
+      .wmeter span { font-weight: 800; font-size: 13px; letter-spacing: .3em; }
+      #wt2, #wt3, #wt4 { position: absolute; inset: 0 20px auto; opacity: 0; }
+      .wsub { margin-top: 14px; font-weight: 800; font-size: 15px; letter-spacing: .3em; text-transform: uppercase; color: #e8e8ec; text-shadow: 0 2px 12px rgba(0,0,0,.8); }
+
+    </style>
+
+    <section id="wash" aria-label="Pre i posle detailinga">
+      <div class="stage">
+        <div class="shot" id="wDirty"><picture><source media="(max-width: 760px)" srcset="assets/img/bmw_dirty_s.webp" /><img src="assets/img/bmw_dirty.webp" alt="Prljav BMW M5 pre detailinga" /></picture></div>
+        <div class="shot" id="wClean"><picture><source media="(max-width: 760px)" srcset="assets/img/bmw_clean_s.webp" /><img src="assets/img/bmw_clean.webp" alt="Isti BMW M5 posle detailinga" /></picture></div>
+        <div id="wFoam"></div>
+        <div class="wtx top">
+          <div id="wt1"><span class="kicker">Poliranje · Keramička zaštita · Niš</span><h1 class="display" style="margin-top:12px">Ispod je<br /><em>fabrički sjaj</em></h1></div>
+          <div id="wt2"><h2 class="display">Poliranjem<br /><em>ga vraćamo</em></h2></div>
+          <div id="wt3"><h2 class="display">Keramikom<br /><em>ga čuvamo</em></h2><p class="wsub">zaštita do 3 godine</p></div>
+          <div id="wt4"><h2 class="display">Detailer koji<br /><em>uči detailere</em></h2><p class="wsub">10 kurseva · Mišel Detailing Akademija</p></div>
+        </div>
+        <div class="wtx bot">
+          <div class="whint" id="wHint"><span>Skroluj i otkrij ga</span><i></i></div>
+          <div class="wmeter" id="wMeter"><b id="wPct">0%</b><span>SJAJ</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      window.addEventListener("load", () => {
+        if (!window.gsap || !window.ScrollTrigger || matchMedia("(prefers-reduced-motion: reduce)").matches) { document.getElementById("wClean").style.clipPath = "none"; return; }
+        const foam = document.getElementById("wFoam");
+        for (let i = 0; i < 14; i++) { const d = document.createElement("i"); d.style.top = (i * 7 + Math.random() * 5) + "%"; d.style.marginLeft = (Math.random() * 40 - 25) + "px"; d.style.transform = `scale(${0.4 + Math.random() * 0.9})`; foam.appendChild(d); }
+        const pct = document.getElementById("wPct"), p = { v: 0 };
+        gsap.timeline({ scrollTrigger: { trigger: "#wash", start: "top top", end: "bottom bottom", scrub: 0.6 } })
+          .to("#wHint", { opacity: 0, y: 20, duration: 0.08 }, 0.02)
+          .to("#wt1", { opacity: 0, y: -40, duration: 0.1 }, 0.05)
+          .to("#wMeter", { opacity: 1, duration: 0.06 }, 0.08)
+          .to("#wFoam", { opacity: 1, duration: 0.04 }, 0.1)
+          .fromTo("#wClean", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "none" }, 0.12)
+          .fromTo("#wFoam", { left: "0%" }, { left: "100%", duration: 0.6, ease: "none" }, 0.12)
+          .fromTo(p, { v: 0 }, { v: 100, duration: 0.6, ease: "none", onUpdate: () => (pct.textContent = Math.round(p.v) + "%") }, 0.12)
+          .fromTo("#wt2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.1 }, 0.3)
+          .to("#wt2", { opacity: 0, y: -40, duration: 0.08 }, 0.62)
+          .to("#wFoam", { opacity: 0, duration: 0.04 }, 0.72)
+          .fromTo("#wt3", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.08 }, 0.72)
+          .to("#wt3", { opacity: 0, y: -40, duration: 0.06 }, 0.84)
+          .fromTo("#wt4", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.08 }, 0.88)
+          .fromTo("#wash .shot img", { scale: 1.08 }, { scale: 1, duration: 1, ease: "none" }, 0)
+          .to("#wMeter", { opacity: 0, duration: 0.06 }, 0.8);
+        ScrollTrigger.refresh();
+      });
+    </script>
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-media">
